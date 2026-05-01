@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Wassel'lia – Processus 48h & flux WhatsApp | Documentation utilisateur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: #fefaf7;
+            color: #1e1e2a;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1.75rem;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            padding: 2rem 2rem 2rem 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #5A3A1F, #84593D);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.25rem;
+        }
+
+        .subhead {
+            color: #7a5a44;
+            border-left: 4px solid #D9A441;
+            padding-left: 1rem;
+            margin: 0.5rem 0 1.5rem 0;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem 0;
+            color: #5A3A1F;
+            border-bottom: 2px solid #f0e5dd;
+            padding-bottom: 0.4rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .card {
+            background: #fefaf7;
+            border-radius: 1rem;
+            padding: 1.2rem;
+            border: 1px solid #f0e5dd;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #84593D;
+            border-left: 3px solid #D9A441;
+            padding-left: 0.6rem;
+        }
+
+        .badge {
+            background: #f5ede7;
+            color: #84593D;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 1rem;
+            display: inline-block;
+            margin-right: 0.4rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .step {
+            margin: 1rem 0 0.5rem 0;
+            padding-left: 1.2rem;
+            border-left: 3px solid #D9A441;
+        }
+        .step strong {
+            color: #5A3A1F;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            margin: 0.8rem 0;
+        }
+        th, td {
+            border: 1px solid #f0e5dd;
+            padding: 0.5rem;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background: #f5ede7;
+            font-weight: 600;
+            color: #5A3A1F;
+        }
+
+        .diagram {
+            background: #fefaf7;
+            border: 1px dashed #D9A441;
+            border-radius: 0.8rem;
+            padding: 1rem;
+            font-family: monospace;
+            font-size: 0.7rem;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            text-align: center;
+            color: #8b7a6b;
+            border-top: 1px solid #f0e5dd;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 800px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .container { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Wassel'lia – Processus 48h & flux WhatsApp</h1>
+    <div class="subhead">Guide complet du déroulement d’un déménagement – Rôles, statuts, notifications, garantie</div>
+
+    <!-- Vue d’ensemble -->
+    <div class="section-title">⏱ Le processus 48h – de la demande à la fin du déménagement</div>
+    <p>Wassel'lia s’engage à réaliser votre déménagement en moins de <strong>48 heures</strong> à compter de la validation du devis. Ce délai comprend l’inspection sur place, la signature du contrat, le chargement, le transport et le déchargement. Le processus est entièrement traçable via WhatsApp et la page de suivi en ligne.</p>
+    <div class="diagram">
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  ÉTAPE 1 : Demande de devis (client) – T+0h                                 │
+│  Client remplit le formulaire en ligne (5 étapes) → envoi à Wassel'lia.    │
+│  Statut : "pending_quote" – notification au modérateur.                    │
+└───────────────────────────────┬─────────────────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  ÉTAPE 2 : Génération du devis (modérateur + IA) – T+0h à T+2h             │
+│  Modérateur consulte la demande, clique "Générer le devis".                │
+│  IA calcule le prix (forfait + distance + étages + formule clé en main).   │
+│  Modérateur valide → génération PDF.                                       │
+│  Statut : "quote_generated"                                                │
+└───────────────────────────────┬─────────────────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  ÉTAPE 3 : Envoi du devis par WhatsApp – T+2h à T+4h                       │
+│  Modérateur envoie le lien du PDF via WhatsApp (numéro client).            │
+│  Message : "Bonjour, voici votre devis détaillé. Pour confirmer, répondez CONFIRMER." │
+│  Statut : "quote_sent"                                                     │
+└───────────────────────────────┬─────────────────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  ÉTAPE 4 : Confirmation client (WhatsApp) – T+4h à T+12h                   │
+│  Client répond "CONFIRMER". Le webhook (phase 2) met à jour le statut.     │
+│  Statut : "quote_accepted" → déclenche la planification de l'inspection.   │
+└───────────────────────────────┬─────────────────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  ÉTAPE 5 : Inspection sur place (prestataire) – T+12h à T+24h              │
+│  Un prestataire qualifié se rend chez le client, vérifie l'inventaire,     │
+│  confirme les conditions d'accès, et fait signer le contrat électronique.  │
+│  Statut : "inspection_done" puis "contract_signed".                        │
+└───────────────────────────────┬─────────────────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  ÉTAPE 6 : Déménagement – T+24h à T+48h                                    │
+│  L’équipe de prestataires arrive à l’heure convenue, charge les biens,     │
+│  transporte, décharge. Le client peut suivre le statut en ligne.           │
+│  Statut : "in_progress" puis "completed".                                  │
+└─────────────────────────────────────────────────────────────────────────────┘
+    </div>
+
+    <!-- Rôles et responsabilités -->
+    <div class="section-title"> Rôles & responsabilités</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3>Client (particulier)</h3>
+            <p><span class="badge">Actions</span> Remplir le formulaire de devis, confirmer par WhatsApp, signer le contrat électronique, payer (espèces ou virement), évaluer le service.<br>
+            <span class="badge">Notifications reçues</span> Devis, rappel inspection, rappel déménagement, confirmation de fin, demande d’avis.</p>
+        </div>
+        <div class="card">
+            <h3>Modérateur (équipe Wassel'lia)</h3>
+            <p><span class="badge">Actions</span> Générer le devis IA, envoyer le lien WhatsApp, suivre les confirmations, assigner un prestataire, gérer les litiges.<br>
+            <span class="badge">Outils</span> Dashboard admin (demandes, devis, candidatures).</p>
+        </div>
+        <div class="card">
+            <h3>Prestataire (déménageur)</h3>
+            <p><span class="badge">Actions</span> Recevoir les missions, effectuer l’inspection, signer le contrat, réaliser le déménagement, mettre à jour les statuts (via le dashboard prestataire).<br>
+            <span class="badge">Qualification</span> Vérification des documents, formation, évaluation par les clients.</p>
+        </div>
+        <div class="card">
+            <h3>Admin (fondateurs)</h3>
+            <p><span class="badge">Actions</span> Gérer les modérateurs, superviser les KPIs, valider les prestataires, accéder aux logs.</p>
+        </div>
+    </div>
+
+    <!-- Statuts détaillés -->
+    <div class="section-title"> Statuts d’une demande (suivi client)</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3>Liste des statuts</h3>
+            <ul style="margin-left: 1.2rem;">
+                <li><strong>pending_quote</strong> – Demande soumise, en attente de traitement.</li>
+                <li><strong>quote_generated</strong> – Devis généré par IA (modérateur).</li>
+                <li><strong>quote_sent</strong> – Devis envoyé au client par WhatsApp.</li>
+                <li><strong>quote_accepted</strong> – Client a confirmé sur WhatsApp.</li>
+                <li><strong>inspection_scheduled</strong> – Rendez-vous d’inspection fixé.</li>
+                <li><strong>inspection_done</strong> – Inspection réalisée.</li>
+                <li><strong>contract_signed</strong> – Contrat électronique signé.</li>
+                <li><strong>confirmed</strong> – Déménagement confirmé, paiement traité.</li>
+                <li><strong>in_progress</strong> – Déménagement en cours.</li>
+                <li><strong>completed</strong> – Déménagement terminé, en attente d’avis.</li>
+                <li><strong>cancelled</strong> – Annulé par le client ou par Wassel'lia (délai dépassé).</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Timeline visible par le client</h3>
+            <p>La page de suivi affiche une barre de progression avec les 5 étapes principales :</p>
+            <ol style="margin-left: 1.2rem;">
+                <li>Demande envoyée</li>
+                <li>Devis accepté</li>
+                <li>Inspection & contrat</li>
+                <li>Déménagement en cours</li>
+                <li>Terminé</li>
+            </ol>
+            <p>Chaque étape est horodatée. Un lien vers le contrat signé (PDF) est disponible.</p>
+        </div>
+    </div>
+
+    <!-- Flux WhatsApp détaillé -->
+    <div class="section-title"> Flux WhatsApp – Messages types</div>
+    <div class="card">
+        <h3>Message d’envoi de devis (modérateur → client)</h3>
+        <div style="background: #f5ede7; padding: 0.8rem; border-radius: 0.8rem; margin: 0.5rem 0;">
+            <em>Bonjour [Prénom],<br>
+            Wassel'lia vous remercie pour votre confiance. Voici votre devis détaillé pour le déménagement du [date] :<br>
+            🔗 [lien sécurisé vers PDF]<br>
+            Prix total TTC : [montant] DH.<br>
+            Ce devis est valable 7 jours.<br>
+            Pour confirmer votre réservation, répondez simplement CONFIRMER.<br>
+            Pour toute question, répondez à ce message ou appelez-nous au +212 679 267 545.</em>
+        </div>
+    </div>
+    <div class="card">
+        <h3>Message de confirmation (client → Wassel'lia)</h3>
+        <div style="background: #f5ede7; padding: 0.8rem; border-radius: 0.8rem; margin: 0.5rem 0;">
+            <em>CONFIRMER</em>
+        </div>
+        <p>Réponse automatique (webhook) : <em>« Votre déménagement est confirmé. Un prestataire vous contactera sous 2h pour planifier l’inspection. »</em></p>
+    </div>
+    <div class="card">
+        <h3>Rappel inspection (Wassel'lia → client)</h3>
+        <div style="background: #f5ede7; padding: 0.8rem; border-radius: 0.8rem; margin: 0.5rem 0;">
+            <em>Rappel : notre prestataire [Nom] viendra inspecter votre logement aujourd’hui entre [heure]. Merci d’être présent.</em>
+        </div>
+    </div>
+    <div class="card">
+        <h3>Rappel déménagement (Wassel'lia → client)</h3>
+        <div style="background: #f5ede7; padding: 0.8rem; border-radius: 0.8rem; margin: 0.5rem 0;">
+            <em>Bonjour, votre déménagement est prévu demain à [heure]. L’équipe arrivera dans la tranche [tranche]. Vous pouvez suivre l’avancement ici : [lien de suivi].</em>
+        </div>
+    </div>
+    <div class="card">
+        <h3>Fin de prestation & demande d’avis</h3>
+        <div style="background: #f5ede7; padding: 0.8rem; border-radius: 0.8rem; margin: 0.5rem 0;">
+            <em>Votre déménagement est terminé ! Merci d’avoir choisi Wassel'lia. Pouvez-vous noter votre expérience de 1 à 5 étoiles et laisser un commentaire ? [lien]</em>
+        </div>
+    </div>
+
+    <!-- Garantie 48h -->
+    <div class="section-title"> Garantie 48h – Conditions d’application</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3>Délai garanti</h3>
+            <p>Le délai de 48 heures court à partir de la signature du contrat électronique (après inspection). Si le déménagement n’est pas terminé dans ce délai (hors force majeure), Wassel'lia s’engage à <strong>rembourser 50% du montant TTC</strong> au client.</p>
+        </div>
+        <div class="card">
+            <h3>Exceptions (force majeure)</h3>
+            <p>• Intempéries bloquant les routes.<br>
+            • Grève des transports.<br>
+            • Panne de véhicule non imputable à Wassel'lia (justificatif requis).<br>
+            • Indisponibilité du client au moment convenu.</p>
+        </div>
+    </div>
+
+    <!-- Phase 2 – automatisation -->
+    <div class="section-title"> Phase 2 – Automatisation WhatsApp (prévue 2026)</div>
+    <div class="card">
+        <p>Actuellement, l’envoi du devis et la gestion des confirmations sont semi‑manuels (lien `wa.me/` généré par le modérateur). À partir de la phase 2 (Q3 2026), nous intégrerons <strong>l’API Twilio WhatsApp Business</strong> pour :</p>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+            <li>Envoi automatique du devis dès sa génération.</li>
+            <li>Boutons interactifs “CONFIRMER” / “ANNULER” / “MODIFIER”.</li>
+            <li>Webhook de mise à jour instantanée des statuts.</li>
+            <li>Envoi de rappels programmés (inspection, déménagement).</li>
+            <li>Collecte automatisée des avis après prestation.</li>
+        </ul>
+        <p class="badge" style="margin-top:0.5rem;">Sécurité</p> Tous les échanges sont chiffrés et conformes à la loi 09‑08. Le consentement du client est recueilli lors de la demande de devis.
+    </div>
+
+    <!-- Exemple de notification email -->
+    <div class="section-title"> Notifications email (optionnelles)</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3>Email de confirmation</h3>
+            <p>Envoyé après la signature du contrat, avec récapitulatif de la prestation et lien de suivi.</p>
+        </div>
+        <div class="card">
+            <h3>Email de facture</h3>
+            <p>PDF de la facture et du contrat signé, envoyé après le déménagement.</p>
+        </div>
+    </div>
+
+    <!-- Support & contacts -->
+    <div class="section-title"> Assistance en cas de problème</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3>WhatsApp support</h3>
+            <p><strong>+212 679 267 545</strong> – Réponse sous 2h (8h‑20h). Pour les urgences le jour du déménagement, appeler ce numéro.</p>
+        </div>
+        <div class="card">
+            <h3>Email</h3>
+            <p>wassel.lia@gmail.com – Réponse sous 24h ouvrées.</p>
+        </div>
+        <div class="card">
+            <h3>Litiges & réclamations</h3>
+            <p>Utiliser le formulaire de contact sur le site ou envoyer un email avec le numéro de demande. Un médiateur vous répondra sous 48h.</p>
+        </div>
+        <div class="card">
+            <h3>Annulation</h3>
+            <p>Annulation gratuite jusqu’à 24h avant l’inspection. Après, des frais de 30% du devis s’appliquent.</p>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        🔹 Wassel'lia – Processus 48h & flux WhatsApp · Avril 2026 · Document évolutif – Version 1.0<br>
+        Ce guide est destiné aux clients et aux prestataires. En cas de mise à jour du processus, une nouvelle version sera diffusée.
+    </div>
+</div>
+
+<!-- Back to Index Button -->
+<div style="text-align: center; margin-top: 2rem; padding: 1rem;">
+    <a href="../index.html" style="display: inline-block; background: #5A3A1F; color: white; text-decoration: none; font-family: 'Inter', sans-serif; font-weight: 500; padding: 0.6rem 1.5rem; border-radius: 2rem; font-size: 0.8rem; border: 1px solid #D9A441; transition: 0.2s;">← Retour à l’index des documents</a>
+</div>
+</body>
+</html>

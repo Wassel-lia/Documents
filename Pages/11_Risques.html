@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Wassel'lia – Registre des risques & plan de mitigation | Documentation investisseur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: #fefaf7;
+            color: #1e1e2a;
+            line-height: 1.45;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1.75rem;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            padding: 2rem 2rem 2rem 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #5A3A1F, #84593D);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.25rem;
+        }
+
+        .subhead {
+            color: #7a5a44;
+            border-left: 4px solid #D9A441;
+            padding-left: 1rem;
+            margin: 0.5rem 0 1.5rem 0;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 1.8rem 0 1rem 0;
+            color: #5A3A1F;
+            border-bottom: 2px solid #f0e5dd;
+            padding-bottom: 0.4rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .card {
+            background: #fefaf7;
+            border-radius: 1rem;
+            padding: 1.2rem;
+            border: 1px solid #f0e5dd;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #84593D;
+            border-left: 3px solid #D9A441;
+            padding-left: 0.6rem;
+        }
+
+        .badge {
+            background: #f5ede7;
+            color: #84593D;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 1rem;
+            display: inline-block;
+            margin-right: 0.4rem;
+            margin-bottom: 0.3rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            margin: 0.8rem 0;
+        }
+        th, td {
+            border: 1px solid #f0e5dd;
+            padding: 0.6rem 0.5rem;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background: #f5ede7;
+            font-weight: 700;
+            color: #5A3A1F;
+        }
+        .risk-level {
+            font-weight: 700;
+            text-align: center;
+        }
+        .high {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .medium {
+            background: #fef9e6;
+            color: #b45309;
+        }
+        .low {
+            background: #e6f7ec;
+            color: #166534;
+        }
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            text-align: center;
+            color: #8b7a6b;
+            border-top: 1px solid #f0e5dd;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 800px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .container { padding: 1.5rem; }
+            table { font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Wassel'lia – Registre des risques & plan de mitigation</h1>
+    <div class="subhead">Analyse quantitative – Aligné sur le scénario prudent (1 500 déménagements Y1, CA 450 kDH, sleeping partner 250 kDH) – Avril 2026</div>
+
+    <!-- Matrice des risques (résumé) -->
+    <div class="section-title"> Matrice des risques – gravité & probabilité</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3>Légende des scores</h3>
+            <p><span class="badge high">Élevé</span> Probabilité >40% ET impact >100 kDH ou critique pour l’activité.<br>
+            <span class="badge medium">Moyen</span> Probabilité 10‑40% OU impact 10‑100 kDH.<br>
+            <span class="badge low">Faible</span> Probabilité <10% OU impact <10 kDH.</p>
+        </div>
+        <div class="card">
+            <h3>Principales mitigations en résumé</h3>
+            <ul style="margin-left: 1.2rem;">
+                <li>Vérification rigoureuse des prestataires (documents, formation).</li>
+                <li>Assurance RC Pro (2 000 000 MAD) et contrat électronique.</li>
+                <li>Processus 48h garanti avec remboursement partiel en cas de dépassement.</li>
+                <li>Dépôt de marque et droit d’auteur sur l’algorithme de devis IA.</li>
+                <li>Diversification géographique (7 villes) pour lisser les risques locaux.</li>
+                <li>Scénario prudent : trésorerie positive dès Y1 (529 kDH).</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 1. Risques opérationnels & prestataires -->
+    <div class="section-title"> Risques opérationnels & prestataires</div>
+    <table>
+        <thead>
+            <tr><th>Description du risque</th><th>Probabilité</th><th>Impact (kDH)</th><th>Mitigation</th><th>Contingence</th></tr>
+        </thead>
+        <tbody>
+            <tr><td class="left">Prestataire non fiable (annulation de dernière minute, casse, vol).</div>
+                <td class="risk-level medium">Moyen (25%)</div><td class="risk-level high">Élevé (150)</div>
+                <td>Vérification des antécédents (casier judiciaire), formation obligatoire, système de notation, clause contractuelle de pénalité.</div>
+                <td>Basculer sur un prestataire de secours (réseau de backup). Remboursement partiel au client.</div></tr>
+            <tr><td class="left">Non‑respect du délai 48h (retard accumulation).</div>
+                <td class="risk-level medium">Moyen (20%)</div><td class="risk-level medium">Moyen (80)</div>
+                <td>Planification rigoureuse, notifications automatiques, prestataires formés au processus.</div>
+                <td>Application de la garantie : remboursement 50% au client. Analyse des causes et ajustement des plannings.</div></tr>
+            <tr><td class="left">Litige sur l’inventaire (objet manquant ou endommagé).</div>
+                <td class="risk-level medium">Moyen (15%)</div><td class="risk-level medium">Moyen (50)</div>
+                <td>Photo avant/après obligatoire stockée dans le dossier client. Contrat électronique détaillé.</div>
+                <td>Assurance RC Pro couvre la casse. Médiation via Wassel'lia.</div></tr>
+            <tr><td class="left">Pénurie de prestataires qualifiés pendant les pics (été, fin d’année).</div>
+                <td class="risk-level high">Élevé (45%)</div><td class="risk-level medium">Moyen (60)</div>
+                <td>Recrutement continu, programme de parrainage, planning prévisionnel.</div>
+                <td>Faire appel à des prestataires externes (agences intérim) ; augmenter les tarifs pour réguler la demande.</div></tr>
+        </tbody>
+    </table>
+
+    <!-- 2. Risques de marché & concurrence -->
+    <div class="section-title"> Risques de marché & concurrence</div>
+    <table>
+        <thead>
+            <tr><th>Description du risque</th><th>Probabilité</th><th>Impact (kDH)</th><th>Mitigation</th><th>Contingence</th></tr>
+        </thead>
+        <tbody>
+            <tr><td class="left">Entrée d’un concurrent direct (Hany, Wadouz, Lalamove) avec modèle similaire.</div>
+                <td class="risk-level high">Élevé (50%)</div><td class="risk-level high">Élevé (400)</div>
+                <td>First‑mover : verrouiller les prestataires avec contrats d’exclusivité, accumuler les avis positifs, différenciation par l’équipe coordonnée et le délai 48h.</div>
+                <td>Réduction des prix, campagne marketing agressive, amélioration continue de l’UX.</div></tr>
+            <tr><td class="left">Ralentissement économique → moins de déménagements.</div>
+                <td class="risk-level medium">Moyen (30%)</div><td class="risk-level medium">Moyen (200)</div>
+                <td>Cibler les étudiants et jeunes actifs (déménagements annuels). Proposer des formules low cost.</div>
+                <td>Diversifier vers le nettoyage (2027) et la garde‑meubles.</div></tr>
+            <tr><td class="left">Défiance des clients vis-à-vis du paiement en ligne ou du devis IA.</div>
+                <td class="risk-level high">Élevé (40%)</div><td class="risk-level low">Faible (20)</div>
+                <td>Proposer le paiement à l’arrivée (espèces). Afficher des témoignages et labels (SNEE).</div>
+                <td>Campagne d’explication sur le fonctionnement de l’IA ; support WhatsApp dédié.</div></tr>
+        </tbody>
+    </table>
+
+    <!-- 3. Risques financiers -->
+    <div class="section-title"> Risques financiers</div>
+    <table>
+        <thead>
+            <tr><th>Description du risque</th><th>Probabilité</th><th>Impact (kDH)</th><th>Mitigation</th><th>Contingence</th></tr>
+        </thead>
+        <tbody>
+            <tr><td class="left">Trésorerie négative avant d’atteindre le seuil de rentabilité (scénario pessimiste).</div>
+                <td class="risk-level low">Faible (10%)</div><td class="risk-level high">Élevé (300)</div>
+                <td>Bootstrapping, charges fixes minimales (86 kDH Y1). Modèle prudent avec trésorerie positive dès Y1 (529 kDH).</div>
+                <td>Réduction des coûts marketing, report des embauches, recherche de financement complémentaire.</div></tr>
+            <tr><td class="left">Non‑paiement de la commission par les prestataires (cas de paiement en espèces).</div>
+                <td class="risk-level medium">Moyen (15%)</div><td class="risk-level low">Faible (30)</div>
+                <td>Contrat électronique engageant, dépôt de garantie pour les prestataires fréquents, suivi des reversements.</div>
+                <td>Suspension du prestataire, recours juridique, assurance crédit client.</div></tr>
+            <tr><td class="left">Inflation des coûts (carburant, matériel d’emballage, salaires).</div>
+                <td class="risk-level medium">Moyen (25%)</div><td class="risk-level low">Faible (50)</div>
+                <td>Forfaits avec marge intégrée, contrats fournisseurs à prix fixe sur 12 mois.</div>
+                <td>Ajustement des prix (clause de révision dans les CGV).</div></tr>
+            <tr><td class="left">Remboursement sleeping partner plus lent que prévu (croissance -30%).</div>
+                <td class="risk-level medium">Moyen (20%)</div><td class="risk-level medium">Moyen (80)</div>
+                <td>Scénario prudent intégré. Remboursement prévu en Y3-Y4.</div>
+                <td>Négocier un report ou un échelonnement.</div></tr>
+        </tbody>
+    </table>
+
+    <!-- 4. Risques juridiques & conformité -->
+    <div class="section-title"> Risques juridiques & conformité</div>
+    <table>
+        <thead>
+            <tr><th>Description du risque</th><th>Probabilité</th><th>Impact (kDH)</th><th>Mitigation</th><th>Contingence</th></tr>
+        </thead>
+        <tbody>
+            <tr><td class="left">Requalification des prestataires en salariés (CDI déguisé).</div>
+                <td class="risk-level medium">Moyen (15%)</div><td class="risk-level high">Élevé (200)</div>
+                <td>Contrats de prestation B2B, liberté d’organisation, absence de subordination, facturation autonome.</div>
+                <td>Constituer une société de portage salarial, provisionner les charges sociales.</div></tr>
+            <tr><td class="left">Non‑conformité à la loi 09‑08 (protection des données).</div>
+                <td class="risk-level low">Faible (5%)</div><td class="risk-level high">Élevé (100)</div>
+                <td>Politique de confidentialité, déclaration CNDP, chiffrement des données, consentement explicite.</div>
+                <td>Amende potentielle (jusqu’à 100 kDH) – provision pour risque.</div></tr>
+            <tr><td class="left">Litige client sur la casse (refus d’indemnisation par l’assurance).</div>
+                <td class="risk-level low">Faible (5%)</div><td class="risk-level medium">Moyen (40)</div>
+                <td>Contrat électronique détaillant les exclusions, photos avant/après, assurance RC Pro.</div>
+                <td>Négociation à l’amiable, médiation, puis action en justice si nécessaire.</div></tr>
+        </tbody>
+    </table>
+
+    <!-- 5. Risques technologiques -->
+    <div class="section-title"> Risques technologiques</div>
+    <table>
+        <thead>
+            <tr><th>Description du risque</th><th>Probabilité</th><th>Impact (kDH)</th><th>Mitigation</th><th>Contingence</th></tr>
+        </thead>
+        <tbody>
+            <tr><td class="left">Panne de la plateforme (hébergement, base de données) pendant les heures de pointe.</div>
+                <td class="risk-level low">Faible (5%)</div><td class="risk-level high">Élevé (150)</div>
+                <td>Hébergement redondant (Supabase multi‑régions), sauvegardes quotidiennes, monitoring (uptime >99,9%).</div>
+                <td>Plan de reprise d’activité (RTO <4h). Communication de crise vers les clients.</div></tr>
+            <tr><td class="left">IA de devis qui calcule mal le prix (erreur de distance ou d’étages).</div>
+                <td class="risk-level medium">Moyen (10%)</div><td class="risk-level low">Faible (10)</div>
+                <td>Validation manuelle par le modérateur avant envoi, seuils de cohérence programmés.</div>
+                <td>Correction du devis et envoi d’un avenant au client.</div></tr>
+            <tr><td class="left">Cyberattaque (vol de données clients).</div>
+                <td class="risk-level low">Faible (3%)</div><td class="risk-level high">Élevé (200)</div>
+                <td>MFA pour admins, chiffrement TLS/AES‑256, audits de sécurité réguliers.</div>
+                <td>Assurance cyber, notification aux autorités (CNDP), changement des mots de passe.</div></tr>
+        </tbody>
+    </table>
+
+    <!-- 6. Top 5 risques prioritaires -->
+    <div class="section-title"> Top 5 risques prioritaires (par score)</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3>1. Entrée d’un concurrent direct</h3>
+            <p><span class="badge high">Score 16/25</span> (Probabilité élevée + Impact élevé). Mitigation : contrats d’exclusivité avec prestataires, accumulation d’avis, différenciation par l’équipe coordonnée.</p>
+        </div>
+        <div class="card">
+            <h3>2. Prestataire non fiable (annulation, casse)</h3>
+            <p><span class="badge high">Score 14/25</span> (Impact élevé). Mitigation : vérification rigoureuse, formation, clause de pénalité, réseau de backup.</p>
+        </div>
+        <div class="card">
+            <h3>3. Ralentissement économique / baisse de volume</h3>
+            <p><span class="badge medium">Score 12/25</span> Mitigation : ciblage étudiants, diversification services.</p>
+        </div>
+        <div class="card">
+            <h3>4. Pénurie de prestataires qualifiés en période de pointe</h3>
+            <p><span class="badge medium">Score 12/25</span> Mitigation : recrutement continu, programme de parrainage, planning prévisionnel.</p>
+        </div>
+        <div class="card">
+            <h3>5. Requalification des prestataires en salariés</h3>
+            <p><span class="badge medium">Score 11/25</span> Mitigation : contrats B2B bien rédigés, absence de subordination, facturation autonome.</p>
+        </div>
+    </div>
+
+    <!-- Assurances & protections légales -->
+    <div class="section-title"> Assurances & protections légales</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3>Responsabilité civile professionnelle (RC Pro)</h3>
+            <p>Couverture jusqu’à <strong>2 000 000 MAD</strong> par sinistre (AtlantaSanad / Wafa Assurance). Protège contre les dommages aux biens du client (casse, vol) et les préjudices corporels.</p>
+        </div>
+        <div class="card">
+            <h3>Assurance des véhicules (prestataires)</h3>
+            <p>Obligatoire pour tout camion utilisé. Wassel'lia exige une attestation valide des prestataires.</p>
+        </div>
+        <div class="card">
+            <h3>Cyber assurance</h3>
+            <p>Couvre la réponse à incident et les frais de défense en cas de fuite de données (500 000 MAD). Active après le premier client payant.</p>
+        </div>
+        <div class="card">
+            <h3>Dépôt de marque & droit d’auteur</h3>
+            <p>Marque « Wassel'lia » et « Wssel » déposées à l’OMPIC. Algorithme de devis IA protégé par le droit d’auteur (code source).</p>
+        </div>
+    </div>
+
+    <!-- Processus de suivi des risques -->
+    <div class="card" style="background:#f5ede7;">
+        <h3> Suivi & revue des risques</h3>
+        <p>• Réunion mensuelle d’évaluation des risques (équipe fondatrice).<br>
+        • Mise à jour trimestrielle du registre avec nouveaux risques et efficacité des mitigations.<br>
+        • Audit annuel externe (expert‑comptable / avocat).<br>
+        • Les risques sont suivis dans un tableur partagé (versionné).<br>
+        • Après chaque jalon (levée de fonds, extension à une nouvelle ville, pic d’activité), les risques sont réévalués.</p>
+    </div>
+
+    <div class="footer-note">
+        🔹 Wassel'lia – Registre des risques & plan de mitigation · Avril 2026 · Confidentiel – Pour investisseurs et gouvernance interne.<br>
+        Ce document est aligné sur le scénario prudent (1 500 déménagements Y1, CA 450 kDH, trésorerie 529 kDH).
+    </div>
+</div>
+
+<!-- Back to Index Button -->
+<div style="text-align: center; margin-top: 2rem; padding: 1rem;">
+    <a href="../index.html" style="display: inline-block; background: #5A3A1F; color: white; text-decoration: none; font-family: 'Inter', sans-serif; font-weight: 500; padding: 0.6rem 1.5rem; border-radius: 2rem; font-size: 0.8rem; border: 1px solid #D9A441; transition: 0.2s;">← Retour à l’index des documents</a>
+</div>
+</body>
+</html>

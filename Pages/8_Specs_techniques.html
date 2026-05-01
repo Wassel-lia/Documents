@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Wassel'lia – Spécifications techniques & architecture | Documentation investisseur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: #fefaf7;
+            color: #1e1e2a;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1.75rem;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            padding: 2rem 2rem 2rem 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #5A3A1F, #84593D);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.25rem;
+        }
+
+        .subhead {
+            color: #7a5a44;
+            border-left: 4px solid #D9A441;
+            padding-left: 1rem;
+            margin: 0.5rem 0 1.5rem 0;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem 0;
+            color: #5A3A1F;
+            border-bottom: 2px solid #f0e5dd;
+            padding-bottom: 0.4rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .card {
+            background: #fefaf7;
+            border-radius: 1rem;
+            padding: 1.2rem;
+            border: 1px solid #f0e5dd;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #84593D;
+            border-left: 3px solid #D9A441;
+            padding-left: 0.6rem;
+        }
+
+        .badge {
+            background: #f5ede7;
+            color: #84593D;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 1rem;
+            display: inline-block;
+            margin-right: 0.4rem;
+            margin-bottom: 0.3rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            margin: 0.8rem 0;
+        }
+        th, td {
+            border: 1px solid #f0e5dd;
+            padding: 0.5rem;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background: #f5ede7;
+            font-weight: 600;
+            color: #5A3A1F;
+        }
+        code {
+            background: #f5ede7;
+            padding: 0.1rem 0.3rem;
+            border-radius: 0.3rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            color: #84593D;
+        }
+        .diagram {
+            background: #fefaf7;
+            border: 1px dashed #D9A441;
+            border-radius: 0.8rem;
+            padding: 1rem;
+            font-family: monospace;
+            font-size: 0.7rem;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            text-align: center;
+            color: #8b7a6b;
+            border-top: 1px solid #f0e5dd;
+            padding-top: 1.5rem;
+        }
+        @media (max-width: 800px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .container { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Wassel'lia – Spécifications techniques & architecture</h1>
+    <div class="subhead">Documentation technique – Cloud, PWA, base de données, IA, sécurité – Confidentiel</div>
+
+    <!-- Vue d'ensemble -->
+    <div class="section-title"> Vue d’ensemble de la plateforme</div>
+    <p style="margin-bottom:1rem;">Wassel'lia est une application web PWA (Progressive Web App) full‑stack, mobile‑first, qui permet aux clients de soumettre une demande de devis de déménagement, aux modérateurs de générer un devis assisté par IA, et aux prestataires de suivre leurs missions. L’architecture est cloud‑native, serverless, avec une base de données PostgreSQL (Supabase), des edge functions Deno, et un frontend React/Vite.</p>
+    <div class="diagram">
+┌─────────────────────────────────────────────────────────────────────────┐
+│                         CLIENT (NAVIGATEUR / PWA)                        │
+│  - React 18 + TypeScript + TailwindCSS + shadcn/ui                      │
+│  - Formulaire de devis en 5 étapes (inventaire, adresses, date)         │
+│  - Page de suivi (timeline des statuts)                                 │
+│  - Espace prestataire (candidature, missions)                           │
+└───────────────────────────────┬─────────────────────────────────────────┘
+                                │ HTTPS / API REST
+                                ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                      SUPABASE (BACKEND MANAGÉ)                           │
+│  - Authentification (JWT, MFA TOTP pour admins)                         │
+│  - Base de données PostgreSQL (RLS)                                     │
+│  - Storage (bucket `quotes` pour PDF signés)                            │
+│  - Edge Functions (Deno) : devis IA, PDF, webhook WhatsApp              │
+└───────────────────────────────┬─────────────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                     SERVICES EXTERNES (API)                              │
+│  - Lovable / OpenAI : génération du devis détaillé                      │
+│  - Google Distance Matrix : calcul distance routière                    │
+│  - Twilio WhatsApp Business API (phase 2)                              │
+│  - Stripe (paiement en ligne – à venir)                                │
+└─────────────────────────────────────────────────────────────────────────┘
+    </div>
+
+    <!-- Frontend PWA -->
+    <div class="section-title"> Frontend – PWA React / Vite</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3> Stack technique</h3>
+            <p><span class="badge">React 18</span> <span class="badge">TypeScript</span> <span class="badge">Vite</span> <span class="badge">TailwindCSS</span> <span class="badge">shadcn/ui</span><br>
+            <span class="badge">React Router</span> <span class="badge">React Query</span> <span class="badge">Framer Motion</span> <span class="badge">Zod</span></p>
+        </div>
+        <div class="card">
+            <h3> Mobile‑first & PWA</h3>
+            <p>Application installable sur smartphone (manifest.json, service worker). Tous les écrans optimisés pour ≤375px. Navigation par onglets, formulaire adapté aux petits écrans.</p>
+        </div>
+        <div class="card">
+            <h3> Pages publiques</h3>
+            <p>Accueil (hero, process, villes), Formulaire de devis (5 étapes), Suivi (timeline), Devenir prestataire, Contact, Mentions légales.</p>
+        </div>
+        <div class="card">
+            <h3> Pages admin / modérateur</h3>
+            <p>Dashboard sécurisé (MFA TOTP) avec 3 onglets : Demandes & devis, Candidatures prestataires, Statistiques (KPIs). Génération de devis IA, envoi WhatsApp, gestion PDF.</p>
+        </div>
+    </div>
+
+    <!-- Backend (Supabase) -->
+    <div class="section-title"> Backend – Supabase (PostgreSQL + RLS + Edge Functions)</div>
+    <table>
+        <thead><tr><th>Composant</th><th>Technologie / Implémentation</th></tr></thead>
+        <tbody>
+            <tr><td>Base de données</td><td>PostgreSQL avec extension TimescaleDB (optionnelle). Schéma : `move_requests`, `quotes`, `mover_applications`, `profiles`, `user_roles`.</td></tr>
+            <tr><td>Authentification</td><td>Supabase Auth (JWT). MFA TOTP obligatoire pour les comptes admin. Signups publics désactivés – création manuelle ou invitation.</td></tr>
+            <tr><td>Sécurité (RLS)</td><td>Row Level Security : les clients ne voient que leurs propres demandes ; les admins/modérateurs ont accès à toutes les tables. Fonction `has_role()` SECURITY DEFINER.</td></tr>
+            <tr><td>Stockage</td><td>Bucket `quotes` (privé). URLs signées expirant après 7 jours. Stockage des PDF de devis et des contrats électroniques.</td></tr>
+            <tr><td>Edge Functions (Deno)</td><td><code>submit-quote-request</code> (public), <code>generate-quote</code> (admin, IA + Distance Matrix), <code>generate-quote-pdf</code> (admin, pdf‑lib), <code>get-tracking-status</code> (public, rate‑limité), <code>invite-admin</code> (admin).</td></tr>
+        </tbody>
+    </table>
+
+    <!-- IA & automatisation -->
+    <div class="section-title"> IA & automatisation des devis</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3> Génération du devis (IA)</h3>
+            <p>L’edge function `generate-quote` reçoit les données de la demande (type logement, formule, inventaire, adresses, étages, distance). Elle appelle l’API Lovable / OpenAI avec un prompt structuré pour calculer :<br>
+            – Forfait base (studio, 2 pièces, 3+, maison)<br>
+            – Supplément distance (5 DH/km au‑delà de 10 km)<br>
+            – Supplément étages sans ascenseur (50 DH/étage)<br>
+            – Majoration formule clé en main (+40%)<br>
+            – TVA 20% et commission Wassel'lia (25%)<br>
+            L’IA retourne un JSON détaillé (justificatif ligne à ligne).</p>
+        </div>
+        <div class="card">
+            <h3> Génération PDF (pdf‑lib)</h3>
+            <p>Une fois le devis validé par le modérateur, `generate-quote-pdf` crée un PDF professionnel avec mentions légales, logo, conditions générales, et le stocke dans le bucket `quotes`. Un lien signé est envoyé au client par WhatsApp.</p>
+        </div>
+        <div class="card">
+            <h3> Communication WhatsApp</h3>
+            <p>Actuellement, l’envoi du devis se fait via un lien `wa.me/` manuel. En phase 2, intégration de Twilio WhatsApp Business API pour l’envoi automatique, les boutons “CONFIRMER” / “ANNULER” et le webhook de confirmation.</p>
+        </div>
+        <div class="card">
+            <h3> Processus 48h automatisé</h3>
+            <p>Des triggers PostgreSQL et des fonctions planifiées (cron) surveillent les délais. Si une demande reste bloquée plus de 48h, une notification est envoyée au modérateur et le client est prévenu.</p>
+        </div>
+    </div>
+
+    <!-- Base de données (schéma) -->
+    <div class="section-title"> Schéma de base de données (tables principales)</div>
+    <table>
+        <thead><tr><th>Table</th><th>Colonnes</th><th>Index</th></tr></thead>
+        <tbody>
+            <tr><td><code>move_requests</code></td><td>id, customer_id, mover_id, pickup_address, dropoff_address, distance_km, service_type (transport_only/turnkey), cleaning_service (bool), status, base_price, total_price, commission_amount, payment_method, contract_signed, inspection_at, scheduled_date, status (enum)</td><td>(customer_id), (status), (scheduled_date)</td></tr>
+            <tr><td><code>quotes</code></td><td>id, move_request_id, generated_by, pdf_url, details (JSONB), total_price_ht, total_price_ttc, commission, valid_until, sent_at, status (draft/sent/accepted/rejected)</td><td>(move_request_id)</td></tr>
+            <tr><td><code>mover_applications</code></td><td>id, user_id, cin_number, cin_urls, selfie_url, driver_license_url, vehicle_registration_url, criminal_record_url, insurance_certificate_url, qualification_status (pending/approved/rejected/suspended), training_completed, rating</td><td>(user_id), (qualification_status)</td></tr>
+            <tr><td><code>profiles</code></td><td>id, email, phone, full_name, role (customer/mover/admin/moderator), created_at</td><td>(email), (phone)</td></tr>
+            <tr><td><code>user_roles</code></td><td>user_id, role (admin only – géré par RLS)</td><td>(user_id)</td></tr>
+        </tbody>
+    </table>
+
+    <!-- Sécurité & conformité -->
+    <div class="section-title"> Sécurité & conformité</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3> Authentification & accès</h3>
+            <p>• JWT avec expiration courte (1h).<br>
+            • MFA TOTP obligatoire pour tous les comptes admin (Google Authenticator).<br>
+            • Vérification des mots de passe compromis (HIBP).<br>
+            • Signups publics désactivés – création manuelle via invitation.</p>
+        </div>
+        <div class="card">
+            <h3> Protection des données</h3>
+            <p>• TLS 1.3 pour toutes les communications.<br>
+            • Chiffrement AES‑256 au repos (Supabase).<br>
+            • RLS : isolation stricte entre clients, modérateurs et admins.<br>
+            • Conformité loi 09‑08 (CNDP) : déclaration, politique de confidentialité, bandeau cookies.</p>
+        </div>
+        <div class="card">
+            <h3>📜 Contrats électroniques</h3>
+            <p>Les contrats signés par les clients (pad de signature ou case à cocher + nom + date) sont stockés en PDF dans un bucket privé, avec horodatage. La signature électronique est réputée fiable sous la loi 53‑05.</p>
+        </div>
+        <div class="card">
+            <h3> Sauvegarde & continuité</h3>
+            <p>• Sauvegarde quotidienne automatique de la base (7 jours de rétention).<br>
+            • RTO < 4 heures, RPO < 1 heure.<br>
+            • Hébergement Supabase (UE) – redondance régionale.</p>
+        </div>
+    </div>
+
+    <!-- Roadmap technique -->
+    <div class="section-title"> Roadmap technique (2026‑2027)</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3>Phase 1 (achevée – avril 2026)</h3>
+            <p>• PWA complète avec formulaire de devis, dashboard admin, génération IA, PDF.<br>
+            • Authentification MFA, RLS, edge functions.<br>
+            • Processus manuel WhatsApp (lien `wa.me/`).</p>
+        </div>
+        <div class="card">
+            <h3>Phase 2 (mai‑juillet 2026)</h3>
+            <p>• Intégration Twilio WhatsApp Business API (envoi automatique, webhook).<br>
+            • Paiement en ligne Stripe (mode test puis production).<br>
+            • Autocomplétion d’adresses Google Places et calcul distance routière.</p>
+        </div>
+        <div class="card">
+            <h3>Phase 3 (août‑décembre 2026)</h3>
+            <p>• Espace prestataire dédié (liste des missions, changement de statut).<br>
+            • Notifications push (Web Push API) pour les rappels.<br>
+            • Page de transparence publique (KPIs en temps réel).</p>
+        </div>
+        <div class="card">
+            <h3>Phase 4 (2027+)</h3>
+            <p>• Application mobile native (Capacitor ou React Native).<br>
+            • Service nettoyage intégré (2027).<br>
+            • Algorithme de recommandation IA pour optimiser les tournées des prestataires.</p>
+        </div>
+    </div>
+
+    <!-- Flux de données (exemple devis) -->
+    <div class="section-title"> Flux de données typique – Demande de devis</div>
+    <div class="diagram">
+1. Client remplit formulaire → POST /api/submit-quote-request (edge function) → INSERT INTO move_requests (status='pending_quote')
+2. Modérateur ouvre dashboard → sélectionne la demande → clique "Générer le devis"
+3. Edge function `generate-quote` appelle Lovable IA + Google Distance Matrix → calcule prix et génère justificatif JSON
+4. Modérateur visualise l’aperçu → clique "Envoyer par WhatsApp"
+5. Edge function `generate-quote-pdf` crée PDF → stocke dans bucket → génère URL signée (7j)
+6. Envoi via lien `wa.me/` (manuel) ou API Twilio (automatique) → client reçoit devis
+7. Client répond CONFIRMER (webhook) → statut passe à 'quote_accepted'
+8. Client finalise paiement / signature contrat → statut 'contract_signed' → processus 48h démarre
+    </div>
+
+    <!-- Sources & disponibilité -->
+    <div class="footer-note">
+        🔹 Wassel'lia – Spécifications techniques & architecture · Avril 2026 · Confidentiel – Pour investisseurs et partenaires techniques.<br>
+        Les dépôts de code (frontend, edge functions, migrations) sont disponibles sous NDA pour due diligence.
+    </div>
+</div>
+
+<!-- Back to Index Button -->
+<div style="text-align: center; margin-top: 2rem; padding: 1rem;">
+    <a href="../index.html" style="display: inline-block; background: #5A3A1F; color: white; text-decoration: none; font-family: 'Inter', sans-serif; font-weight: 500; padding: 0.6rem 1.5rem; border-radius: 2rem; font-size: 0.8rem; border: 1px solid #D9A441; transition: 0.2s;">← Retour à l’index des documents</a>
+</div>
+</body>
+</html>

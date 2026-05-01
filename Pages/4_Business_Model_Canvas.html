@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wassel'lia – Business Model Canvas | Documentation investisseur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: #fefaf7;
+            color: #1e1e2a;
+            line-height: 1.45;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1.75rem;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            padding: 2rem 2rem 2rem 2rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #5A3A1F, #84593D);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.25rem;
+        }
+
+        .subhead {
+            color: #7a5a44;
+            border-left: 4px solid #D9A441;
+            padding-left: 1rem;
+            margin: 0.5rem 0 1.5rem 0;
+            font-weight: 500;
+        }
+
+        .canvas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .block {
+            background: #fefaf7;
+            border-radius: 1rem;
+            padding: 1rem;
+            border: 1px solid #f0e5dd;
+            transition: 0.1s ease;
+        }
+
+        .block h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #5A3A1F;
+            border-left: 3px solid #84593D;
+            padding-left: 0.5rem;
+        }
+
+        .block ul, .block p {
+            font-size: 0.85rem;
+            margin-left: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .block li {
+            margin-bottom: 0.3rem;
+        }
+
+        .full-width {
+            grid-column: span 3;
+            background: #f5ede7;
+            margin-top: 0.5rem;
+        }
+
+        .badge {
+            background: #f5ede7;
+            color: #84593D;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 1rem;
+            display: inline-block;
+            margin-right: 0.3rem;
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            text-align: center;
+            color: #8b7a6b;
+            border-top: 1px solid #f0e5dd;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 800px) {
+            .canvas { grid-template-columns: 1fr; }
+            .full-width { grid-column: span 1; }
+            .container { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Wassel'lia – Business Model Canvas</h1>
+    <div class="subhead">Documentation investisseur – Avril 2026 – Scénario prudent (1 500 déménagements Y1, commission 25%, sleeping partner 250 kDH)</div>
+
+    <div class="canvas">
+        <!-- 1. Partenaires clés -->
+        <div class="block">
+            <h3>🤝 Partenaires clés</h3>
+            <ul>
+                <li> Prestataires (déménageurs) – auto‑entrepreneurs vérifiés</li>
+                <li> Agences immobilières – recommandations (commission 5‑10%)</li>
+                <li> UH2C / SNEE – mentorat, crédibilité, réseau étudiant</li>
+                <li> Banques (CIH, Attijari) – virements, futurs paiements en ligne</li>
+                <li> Fournisseurs API WhatsApp (Twilio) – communication automatisée</li>
+                <li> Assureurs (AtlantaSanad, Wafa) – RC Pro et assurance casse</li>
+                <li> Fournisseurs de cartons / matériel d’emballage (pour formule clé en main)</li>
+                <li> Sleeping partner – injection 250 kDH en Y1, part 50% du résultat net jusqu’à 500 kDH remboursés</li>
+            </ul>
+        </div>
+
+        <!-- 2. Activités clés -->
+        <div class="block">
+            <h3>⚙️ Activités clés</h3>
+            <ul>
+                <li> Développement & maintenance de la plateforme (PWA, backend, IA)</li>
+                <li> Recrutement, vérification et formation des prestataires</li>
+                <li> Génération de devis IA et suivi des demandes (dashboard modérateur)</li>
+                <li> Support client WhatsApp (assistance, réclamations)</li>
+                <li> Acquisition client (marketing digital, partenariats, SEO local)</li>
+                <li> Gestion des avis, réputation, programme de parrainage</li>
+                <li> Gestion administrative, juridique, conformité (CNDP, CNSS, TVA)</li>
+            </ul>
+        </div>
+
+        <!-- 3. Ressources clés -->
+        <div class="block">
+            <h3>💎 Ressources clés</h3>
+            <ul>
+                <li> Plateforme web PWA (React, Supabase, edge functions)</li>
+                <li> Algorithme de devis IA (propriétaire, justificatif détaillé)</li>
+                <li> Marque déposée « Wassel'lia » et « Wssel » (OMPIC)</li>
+                <li> Équipe fondatrice (compétences tech, marketing, finance)</li>
+                <li> Réseau de prestataires vérifiés et formés</li>
+                <li> Base de données clients et historique des devis (moat)</li>
+                <li> Label SNEE – crédibilité institutionnelle</li>
+                <li> Apport sleeping partner : 250 kDH en Y1</li>
+            </ul>
+        </div>
+
+        <!-- 4. Proposition de valeur (pleine largeur) -->
+        <div class="block full-width" style="background:#f5ede7;">
+            <h3>🎁 Proposition de valeur</h3>
+            <p><strong>Pour les clients (particuliers) :</strong> « Déménagement sans surprise – prix fixe, équipe coordonnée, 48h garanti »</p>
+            <ul>
+                <li>✔ Deux formules claires : transport seul ou clé en main (cartons, scotch, démontage inclus)</li>
+                <li>✔ Prix fixe garanti avant réservation, visible sur devis détaillé (IA)</li>
+                <li>✔ Processus 48h : inspection sous 24h, déménagement dans les 24h suivantes</li>
+                <li>✔ Devis reçu par WhatsApp, contrat électronique signé, suivi en ligne</li>
+                <li>✔ Assurance casse incluse, support WhatsApp dédié</li>
+                <li>✔ Paiement à l’arrivée (espèces/virement) ou en ligne (Stripe à venir)</li>
+            </ul>
+            <p><strong>Pour les prestataires (déménageurs) :</strong> Missions flexibles, paiement rapide (48h), formation gratuite, volume de demandes qualifiées, commission attractive (75% du prix client).</p>
+        </div>
+
+        <!-- 5. Relations clients -->
+        <div class="block">
+            <h3>❤️ Relations clients</h3>
+            <ul>
+                <li> Devis gratuit sans engagement – risque zéro</li>
+                <li> Support WhatsApp humain (réponse < 2h, numéro dédié)</li>
+                <li> Programme de parrainage (50 DH offerts au client et au filleul)</li>
+                <li> Suivi post‑déménagement – demande d’avis et de notation</li>
+                <li> Suivi de statut en temps réel (page tracking sans GPS)</li>
+                <li> Rappels automatiques par WhatsApp (inspection, déménagement)</li>
+            </ul>
+        </div>
+
+        <!-- 6. Canaux -->
+        <div class="block">
+            <h3>📢 Canaux</h3>
+            <ul>
+                <li> Site web PWA (wassel-lia.ma) – canal principal de demande de devis</li>
+                <li> WhatsApp – envoi des devis, confirmation, suivi, support</li>
+                <li> Réseaux sociaux (Instagram, Facebook, LinkedIn) – acquisition, notoriété</li>
+                <li> SEO local (« déménagement Casablanca prix fixe ») et Google My Business</li>
+                <li> Partenariats agences immobilières & résidences étudiantes</li>
+                <li> Bouche‑à‑oreille amplifié par programme de parrainage</li>
+                <li> Label SNEE – crédibilité lors des pitchs et partenariats</li>
+            </ul>
+        </div>
+
+        <!-- 7. Segments clients -->
+        <div class="block">
+            <h3>👥 Segments clients (ICP)</h3>
+            <ul>
+                <li> Particuliers, étudiants, jeunes actifs, familles, seniors</li>
+                <li> 7 villes : Casablanca, Rabat, Fès, Kénitra, Tanger, Tétouan, Meknès</li>
+                <li> Budget moyen déménagement : 800‑1 500 DH</li>
+                <li> Sensibles au prix, au temps, à la transparence</li>
+                <li> Connectés (WhatsApp, smartphone), recherchent une expérience sans friction</li>
+                <li> Déménagement motivé par changement de location, achat, fin d’études, mutation</li>
+            </ul>
+        </div>
+
+        <!-- 8. Structure de coûts -->
+        <div class="block">
+            <h3>💰 Structure de coûts (par déménagement – réaliste)</h3>
+            <ul>
+                <li> Reversement prestataire : 75% du prix TTC (ex: 900 DH sur 1 200 DH)</li>
+                <li> Marketing & acquisition : ~86 kDH/an (Y1) → 19% du CA HT</li>
+                <li> Assurances (RC Pro, casse) : ~8 kDH/an Y1</li>
+                <li> Hébergement / SaaS : ~6 kDH/an</li>
+                <li> Salaires (employés + indemnités fondateurs) : Y1 = 42 kDH</li>
+                <li> Frais légaux, comptabilité, OMPIC : ~5 kDH/an Y1</li>
+                <li> WhatsApp Business API (phase 2) : ~0,05 $/message</li>
+                <li> Part sleeping partner : 50% du résultat net jusqu’à 500 kDH (versée Y2‑Y3)</li>
+            </ul>
+            <p><span class="badge">Coût variable par déménagement</span> ~0 DH (commission déjà déduite) · <span class="badge">Charges fixes mensuelles (Y1)</span> ~7,2 kDH</p>
+            <p><span class="badge">Seuil de rentabilité</span> atteint dès le 1er mois (marge brute > charges fixes).</p>
+        </div>
+
+        <!-- 9. Flux de revenus -->
+        <div class="block">
+            <h3>💵 Flux de revenus</h3>
+            <ul>
+                <li> <strong>Commission sur chaque déménagement</strong> – 25% du prix TTC.<br>Exemple : déménagement 2 pièces transport seul = 800 DH → 200 DH pour Wassel'lia.</li>
+                <li> <strong>Services additionnels (2027+)</strong> – nettoyage après déménagement, garde‑meubles, assurance premium.</li>
+                <li> <strong>Programme d’affiliation</strong> – commission de 15 DH par déménagement généré par un partenaire (agence, influenceur).</li>
+                <li> <strong>Revenus récurrents</strong> – non applicable (service ponctuel), mais fort taux de recommandation.</li>
+            </ul>
+            <p><span class="badge">Chiffre d’affaires prévisionnel Y1</span> 450 kDH HT · <span class="badge">Commission moyenne par déménagement</span> 300 DH</p>
+            <p><span class="badge">Marge brute Y1</span> 450 kDH · <span class="badge">Résultat net après part Y1</span> 145 kDH</p>
+            <p><span class="badge">Trésorerie fin Y1</span> 529 kDH (TTC)</p>
+        </div>
+    </div>
+
+    <!-- Synthèse pour investisseurs -->
+    <div style="margin-top: 2rem; background: #f5ede7; border-radius: 1rem; padding: 1.2rem;">
+        <h3 style="margin-bottom: 0.5rem;">📌 Principaux enseignements pour les investisseurs (scénario prudent)</h3>
+        <ul style="margin-left: 1.5rem;">
+            <li>✅ <strong>Modèle de revenus clair</strong> : commission 25% sur chaque prestation – cash‑positive dès le premier mois.</li>
+            <li>✅ <strong>Capital‑efficient</strong> : pas de flotte propre, pas de stock, coûts fixes très bas (86 kDH Y1).</li>
+            <li>✅ <strong>Économies unitaires saines</strong> : marge brute 450 kDH Y1, résultat net après part 145 kDH.</li>
+            <li>✅ <strong>Effet réseau</strong> : plus de clients → plus de prestataires → meilleure couverture et réputation.</li>
+            <li>✅ <strong>Avantage premier entrant</strong> : aucune plateforme ne combine prix fixe + équipe coordonnée + devis IA + WhatsApp + délai 48h au Maroc.</li>
+            <li>✅ <strong>Sleeping partner</strong> : injection 250 kDH, remboursement 500 kDH sur 3 ans – retour attractif (100% en 3 ans).</li>
+            <li>✅ <strong>Trésorerie solide</strong> : 529 kDH fin Y1, autosuffisance dès la première année.</li>
+        </ul>
+    </div>
+
+    <div class="footer-note">
+        🔹 Wassel'lia – Business Model Canvas · Avril 2026 · Confidentiel – Pour investisseurs et usage interne.<br>
+        Tous les montants sont en dirhams marocains (DH) hors TVA sauf indication contraire. Projections basées sur le scénario prudent (1 500 déménagements la première année).
+    </div>
+</div>
+
+<!-- Back to Index Button -->
+<div style="text-align: center; margin-top: 2rem; padding: 1rem;">
+    <a href="../index.html" style="display: inline-block; background: #5A3A1F; color: white; text-decoration: none; font-family: 'Inter', sans-serif; font-weight: 500; padding: 0.6rem 1.5rem; border-radius: 2rem; font-size: 0.8rem; border: 1px solid #D9A441; transition: 0.2s;">← Retour à l’index des documents</a>
+</div>
+</body>
+</html>

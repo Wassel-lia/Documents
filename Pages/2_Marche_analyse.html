@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wassel'lia – Analyse de marché | Documentation investisseur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: #fefaf7;
+            color: #1e1e2a;
+            line-height: 1.45;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1.75rem;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            padding: 2rem 2rem 2rem 2rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #5A3A1F, #84593D);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.25rem;
+        }
+
+        .subhead {
+            color: #7a5a44;
+            border-left: 4px solid #D9A441;
+            padding-left: 1rem;
+            margin: 0.5rem 0 1.5rem 0;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 1.8rem 0 1rem 0;
+            color: #5A3A1F;
+            border-bottom: 3px solid #f0e5dd;
+            padding-bottom: 0.5rem;
+        }
+        .section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .card {
+            background: #fefaf7;
+            border-radius: 1.2rem;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid #f0e5dd;
+            transition: 0.1s ease;
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #84593D;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .badge {
+            background: #f5ede7;
+            color: #84593D;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 1rem;
+            display: inline-block;
+        }
+        .matrix-tows {
+            background: #ffffff;
+            border: 1px solid #f0e5dd;
+            border-radius: 1rem;
+            overflow-x: auto;
+        }
+        .matrix-tows table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+        .matrix-tows th, .matrix-tows td {
+            border: 1px solid #f0e5dd;
+            padding: 0.8rem;
+            vertical-align: top;
+            text-align: left;
+        }
+        .matrix-tows th {
+            background: #f5ede7;
+            font-weight: 700;
+            color: #5A3A1F;
+        }
+        .five-forces {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+        .force-item {
+            flex: 1;
+            min-width: 170px;
+            background: #fff6ef;
+            border-radius: 1rem;
+            padding: 0.9rem;
+            border-left: 5px solid #D9A441;
+        }
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            text-align: center;
+            color: #8b7a6b;
+            border-top: 1px solid #f0e5dd;
+            padding-top: 1.5rem;
+        }
+        @media (max-width: 800px) {
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .container { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Wassel'lia – Analyse de marché & concurrentielle</h1>
+    <div class="subhead">Documentation investisseur – Confidentiel – Avril 2026</div>
+
+    <!-- 1. ICP (Profil client idéal) -->
+    <div class="section-title"> ICP – Profil client idéal (18 premiers mois)</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3> Profil du client</h3>
+            <p><strong>Particuliers, étudiants, jeunes actifs, familles</strong> résidant dans les 7 villes cibles (Casablanca, Rabat, Fès, Kénitra, Tanger, Tétouan, Meknès).<br>
+            Location : zones urbaines denses, immeubles avec ou sans ascenseur.<br>
+            Critères : déménagement imminent (location, achat, fin d’études).</p>
+        </div>
+        <div class="card">
+            <h3> Douleurs & motivations</h3>
+            <p>Prix flou, crainte de la casse, perte de temps à chercher des déménageurs.<br>
+            ❌ Pas de transparence, pas de traçabilité, pas d’assurance.<br>
+            ✅ Recherche de simplicité, de confiance et de prix fixe garanti.</p>
+        </div>
+        <div class="card">
+            <h3> Décideur / utilisateur</h3>
+            <p>Étudiant (18-25 ans) – ultra connecté, sensible au prix.<br>
+            Jeune actif (26-35 ans) – manque de temps, prêt à payer pour le confort.<br>
+            Famille (35-50 ans) – recherche fiabilité et assurance.<br>
+            Senior (60+) – accompagnement et bienveillance.</p>
+        </div>
+        <div class="card">
+            <h3> Volonté de payer</h3>
+            <p>Modèle : prix fixe affiché avant réservation. Paiement à l’arrivée (espèces/virement) ou en ligne.<br>
+            Commission Wassel'lia : 25% du prix TTC.<br>
+            Exemple : studio transport seul = 600 DH → commission 150 DH.<br>
+            Acceptation du prix si transparence et assurance incluse.</p>
+        </div>
+    </div>
+
+    <!-- 2. 4P Marketing Mix -->
+    <div class="section-title"> Mix marketing – Les 4P</div>
+    <div class="grid-2">
+        <div class="card"><h3> Produit</h3>Service de déménagement à prix fixe, deux formules (transport seul / clé en main). Devis IA généré en 24h, envoyé par WhatsApp. Contrat électronique, assurance casse incluse. Suivi de statut en ligne (timeline 5 étapes). Disponible dans 7 villes.</div>
+        <div class="card"><h3> Prix</h3>Forfait base selon logement (studio 500 DH, 2 pièces 700 DH, 3+ pièces 900 DH, maison 1100 DH). Supplément étages : 50 DH/étage. Supplément distance : 5 DH/km au-delà de 10 km. Formule clé en main : +40%. Commission Wassel'lia : 25%.</div>
+        <div class="card"><h3> Distribution</h3>Canal principal : application web PWA (wassel-lia.ma). WhatsApp comme canal de confirmation et suivi. Partenariats avec agences immobilières, résidences étudiantes, groupes Facebook locaux. Présence dans 7 villes.</div>
+        <div class="card"><h3> Promotion</h3>Marketing digital ciblé (Instagram, TikTok, Google Ads). Programme de parrainage (50 DH offerts). SEO local (« déménagement Casablanca prix fixe »). Bouche-à-oreille amplifié par avis clients. Lauréat SNEE (crédibilité).</div>
+    </div>
+
+    <!-- 3. PESTEL Macro-environnement -->
+    <div class="section-title"> Analyse PESTEL – Macro-environnement (Maroc)</div>
+    <div class="grid-3">
+        <div class="card"><h3> Politique</h3>Programme SNEE (UH2C) – soutien aux étudiants entrepreneurs. Formalisation de l’économie informelle encouragée. Pas de barrière réglementaire spécifique aux plateformes de mise en relation.</div>
+        <div class="card"><h3> Économique</h3>Inflation modérée, pouvoir d’achat contraint → demande de prix fixes sans surprise. Taux de chômage élevé → main-d’œuvre disponible pour les prestataires. Croissance des classes moyennes urbaines.</div>
+        <div class="card"><h3> Socioculturel</h3>Digitalisation accélérée post-COVID. Confiance encore limitée dans le paiement en ligne, mais progresse. Forte culture du bouche-à-oreille. Besoin de transparence chez les 18-40 ans.</div>
+        <div class="card"><h3> Technologique</h3>Pénétration smartphone élevée (80% en zone urbaine). API de paiement (Stripe, CIH) disponibles. Géolocalisation mature. IA pour devis accessible. Coût de développement PWA faible.</div>
+        <div class="card"><h3> Légal</h3>Conformité CNSS pour prestataires (statut auto-entrepreneur). Contrats de prestation, assurance responsabilité civile obligatoire. Protection des données (loi 09-08). Signature électronique reconnue (loi 53-05).</div>
+        <div class="card"><h3> Environnemental</h3>Optimisation des trajets → réduction CO₂. Possibilité de flotte électrique à long terme. Valorisation « déménagement éco-responsable » (cartons recyclés). Sensibilité environnementale croissante.</div>
+    </div>
+
+    <!-- 4. Matrice TOWS -->
+    <div class="section-title"> Matrice TOWS (stratégies)</div>
+    <div class="matrix-tows">
+        <table>
+            <thead>
+                <tr><th></th><th><strong>Forces (S)</strong><br>✔ Prix fixe garanti<br>✔ Équipe coordonnée et formée<br>✔ Devis IA transparent<br>✔ Processus 48h<br>✔ Lauréat SNEE</th><th><strong>Faiblesses (W)</strong><br>✖ Pas de flotte propre<br>✖ Dépendance aux prestataires freelances<br>✖ Notoriété faible<br>✖ Pas de paiement en ligne actif</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th><strong>Opportunités (O)</strong><br>• Marché informel à formaliser<br>• 7 villes, extension possible<br>• Partenariats agences immobilières<br>• Services additionnels (nettoyage, garde-meubles)</th>
+                    <td><span class="badge">SO – Croissance agressive</span><br>➜ Capitaliser sur le SNEE pour gagner en crédibilité.<br>➜ Déployer rapidement dans les 7 villes avant les concurrents.<br>➜ Lancer le parrainage dès le premier client.</td>
+                    <td><span class="badge">WO – Construire la confiance</span><br>➜ Utiliser les avis clients pour compenser le manque de notoriété.<br>➜ Former rigoureusement les prestataires pour garantir la qualité.<br>➜ Proposer le paiement à l’arrivée pour rassurer.</td>
+                </tr>
+                <tr>
+                    <th><strong>Menaces (T)</strong><br>• Hany / Wadouz peuvent copier<br>• Entrée de Lalamove au Maroc<br>• Clients réticents au digital<br>• Ralentissement économique</th>
+                    <td><span class="badge">ST – Défendre la différenciation</span><br>➜ Mettre en avant l’équipe coordonnée (pas de freelances aléatoires).<br>➜ Signer des contrats d’exclusivité avec les meilleurs prestataires.<br>➜ Déposer la marque et l’algorithme de devis.</td>
+                    <td><span class="badge">WT – Minimiser l’exposition</span><br>➜ Démarrer avec une zone géographique limitée (Casablanca).<br>➜ Maintenir des coûts fixes bas (bootstrapping).<br>➜ Tester le marché avec des pilotes avant scale-up.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 5. Porter's Five Forces -->
+    <div class="section-title"> Les 5 forces de Porter – Structure du secteur</div>
+    <div class="five-forces">
+        <div class="force-item"><strong>1. Menace des nouveaux entrants</strong><br>Élevée. Barrière technique faible (une app simple). Mais <span class="badge">l’avantage du premier entrant</span> et la <span class="badge">confiance accumulée</span> (avis, prestataires formés) créent un fossé. Fenêtre de 12-18 mois.</div>
+        <div class="force-item"><strong>2. Pouvoir des clients</strong><br>Élevé (beaucoup d’alternatives informelles). Cependant, le <strong>prix fixe et la transparence</strong> réduisent l’asymétrie d’information. Un client satisfait devient fidèle.</div>
+        <div class="force-item"><strong>3. Pouvoir des fournisseurs</strong><br>Faible. Les prestataires (manutentionnaires) sont facilement remplaçables. La fidélisation passe par le volume de missions et la formation.</div>
+        <div class="force-item"><strong>4. Menace des substituts</strong><br>Modérée. Alternatives : location d’utilitaire + amis, déménagement « fait maison », ou ne pas déménager. Mais le gain de temps et la sérénité sont des arguments forts.</div>
+        <div class="force-item"><strong>5. Intensité concurrentielle</strong><br>Faible à modérée. Aucun concurrent direct (prix fixe + équipe coordonnée + app dédiée). Concurrence indirecte : Hany, Wadouz, entreprises traditionnelles, informel.</div>
+    </div>
+
+    <!-- 6. Taille du marché et concurrence -->
+    <div class="section-title"> Taille du marché & paysage concurrentiel</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3> TAM / SAM / SOM</h3>
+            <p><strong>TAM (Maroc) :</strong> 386 000 déménagements/an × 1 200 DH = 463 MDH.<br>
+            <strong>SAM (7 villes) :</strong> 108 000 déménagements/an = 130 MDH.<br>
+            <strong>SOM (an 1) :</strong> 3 600 déménagements = 4,3 MDH (3,3% du SAM).<br>
+            Croissance visée : +40% an2, +35% an3, puis +25% jusqu’à an5.</p>
+        </div>
+        <div class="card">
+            <h3> Concurrents & différenciateurs</h3>
+            <p><strong>Hany / Wadouz :</strong> marketplaces généralistes, pas de prix fixe, pas d’équipe coordonnée.<br>
+            <strong>Entreprises traditionnelles (ZIRAX, J’y Vais) :</strong> pas d’app, devis après visite, pas de suivi.<br>
+            <strong>Informel :</strong> zéro garantie, risque de casse/vol.<br>
+            <strong>Wassel'lia :</strong> prix fixe + équipe coordonnée + devis IA + WhatsApp + contrat électronique.</p>
+        </div>
+    </div>
+    <div class="card" style="margin-top:0.5rem;">
+        <h3> Prior art & innovation</h3>
+        <p>Recherche exhaustive sur les plateformes marocaines et internationales (Lalamove, Muvr, Moovick, Tiptapp). Aucune ne propose le modèle « prix fixe + équipe coordonnée + devis IA + WhatsApp + délai 48h » au Maroc. Wassel'lia est le premier acteur à combiner ces briques. L’algorithme de devis IA et le processus de coordination sont des actifs immatériels protégeables (dépôt de marque et logiciel en cours).</p>
+    </div>
+
+    <!-- 7. Go-to-market et scaling -->
+    <div class="section-title"> Plan de déploiement & scaling</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3>Phase 0 (0-50 déménagements)</h3>
+            <p>Acquisition manuelle : groupes Facebook, bouche-à-oreille, partenariats campus. Processus manuel (devis IA + WhatsApp). Objectif : valider le modèle et collecter des avis.</p>
+        </div>
+        <div class="card">
+            <h3>Phase 1 (50-500 déménagements)</h3>
+            <p>Déploiement dans les 7 villes. Recrutement de modérateurs et de prestataires supplémentaires. Automatisation partielle (notifications, contrats).</p>
+        </div>
+        <div class="card">
+            <h3>Phase 2 (500-3 600 déménagements/an)</h3>
+            <p>Marketing digital ciblé (Google Ads, TikTok). Partenariats avec agences immobilières. Ouverture du service nettoyage (2027). Préparation à la levée de fonds.</p>
+        </div>
+        <div class="card">
+            <h3>Phase 3 (scale-up national)</h3>
+            <p>Extension à toutes les villes de plus de 200 000 habitants. Flotte propre progressive. Lancement de l’application mobile native.</p>
+        </div>
+    </div>
+
+    <!-- 8. Synthèse pour investisseurs -->
+    <div class="section-title"> Thèse d’investissement – Pourquoi Wassel'lia va gagner</div>
+    <div class="card" style="background: linear-gradient(115deg, #f5ede7 0%, white 100%);">
+        <p style="font-weight: 600;"> <strong>Wassel'lia occupe une niche unique et non contestée : le déménagement à prix fixe avec équipe coordonnée au Maroc.</strong><br>
+        ➜ Marché large et en croissance (463 MDH TAM, 130 MDH SAM) avec un besoin urgent de transparence.<br>
+        ➜ Fort avantage concurrentiel : premier acteur à combiner prix fixe + devis IA + WhatsApp + délai 48h.<br>
+        ➜ Économies unitaires solides (marge brute 25%, seuil de rentabilité immédiat).<br>
+        ➜ Chemin clair vers l’échelle : de Casablanca à 19 500 déménagements/an en 10 ans (scénario réaliste).<br>
+        ➜ PESTEL favorable, TOWS actionnable, 5 forces maîtrisables – le marché est prêt pour Wassel'lia.</p>
+    </div>
+
+    <div class="footer-note">
+        🔹 Wassel'lia – Analyse de marché · Avril 2026 · Confidentiel – Pour investisseurs et usage interne.<br>
+        Sources : HCP Maroc, ANRT, entretiens terrain (50 ménages), benchmarks internationaux (Lalamove, Muvr, Moovick), modèles financiers internes.
+    </div>
+</div>
+
+<!-- Back to Index Button -->
+<div style="text-align: center; margin-top: 2rem; padding: 1rem;">
+    <a href="../index.html" style="display: inline-block; background: #5A3A1F; color: white; text-decoration: none; font-family: 'Inter', sans-serif; font-weight: 500; padding: 0.6rem 1.5rem; border-radius: 2rem; font-size: 0.8rem; border: 1px solid #D9A441; transition: 0.2s;">← Retour à l’index des documents</a>
+</div>
+</body>
+</html>

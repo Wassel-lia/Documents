@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Wassel'lia – Déménagement à prix fixe au Maroc</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #fefaf7;
+            color: #1e1e2a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #5A3A1F 0%, #84593D 100%);
+            color: white;
+            border-radius: 1.5rem;
+            padding: 3rem 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+        .hero .tagline {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 1.8rem;
+            border-left: 3px solid #D9A441;
+            padding-left: 1.2rem;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: #D9A441;
+            color: #5A3A1F;
+            padding: 0.3rem 0.9rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            background: #D9A441;
+            color: #5A3A1F;
+            padding: 0.7rem 1.5rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            margin-left: 1rem;
+        }
+        .btn:hover {
+            background: #b8863a;
+            transform: translateY(-2px);
+        }
+        /* Sections */
+        .section {
+            background: white;
+            border-radius: 1.25rem;
+            padding: 2rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid #f0e5dd;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #5A3A1F;
+            border-left: 5px solid #84593D;
+            padding-left: 1rem;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+        }
+        .card {
+            background: #fefaf7;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid #f0e5dd;
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #84593D;
+        }
+        .promise-box {
+            background: #f5ede7;
+            border-left: 6px solid #84593D;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin: 1.5rem 0;
+        }
+        .legal-clause {
+            background: #fff6ef;
+            border-left: 4px solid #D9A441;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+            border-radius: 0.75rem;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #8b7a6b;
+            border-top: 1px solid #f0e5dd;
+            padding-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .section { padding: 1.5rem; }
+            .hero { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="hero-badge">SNEE – UH2C</div>
+        <h1>Wassel'lia</h1>
+        <div class="tagline">
+            Déménagement sans surprise – Prix fixe, équipe coordonnée, 48h garanti.<br>
+            Casablanca · Rabat · Fès · Kénitra · Tanger · Tétouan · Meknès
+        </div>
+        <a href="#contact" class="btn">📩 Demander un devis</a>
+        <a href="#pricing" class="btn btn-outline">💰 Voir nos tarifs</a>
+    </div>
+
+    <!-- Problème -->
+    <div class="section">
+        <h2 class="section-title"> Le problème</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Prix flous, prestataires non fiables</h3>
+                <p>Aujourd’hui, trouver un déménageur au Maroc repose sur le bouche-à-oreille. 67% des clients déclarent avoir subi une augmentation de prix le jour J, des retards, ou de la casse. Aucune traçabilité, aucune assurance incluse.</p>
+            </div>
+            <div class="card">
+                <h3>Un marché informel et fragmenté</h3>
+                <p>Le secteur du déménagement résidentiel est dominé par des indépendants non déclarés. Les plateformes généralistes (Hany, Wadouz) ne proposent ni prix fixe ni équipe coordonnée. La confiance est absente.</p>
+            </div>
+        </div>
+        <p style="margin-top:1rem; font-size:0.9rem;"><strong>Chiffre clé :</strong> 385 000 déménagements/an au Maroc (ménages urbains), dont 40% informels. Marché total adressable estimé à ~460 MDH.</p>
+    </div>
+
+    <!-- Solution -->
+    <div class="section">
+        <h2 class="section-title"> Notre solution</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Deux formules claires</h3>
+                <p><strong>Transport seul :</strong> le client prépare ses cartons, l’équipe charge, transporte et décharge.<br>
+                <strong>Clé en main :</strong> l’équipe fournit cartons, scotch, protections, emballe tout, démonte/remonte les meubles et range à l’arrivée.</p>
+                <p>· Prix fixe garanti avant réservation <br>
+                   · Assurance casse incluse <br>
+                   · Équipe formée et notée</p>
+            </div>
+            <div class="card">
+                <h3>Processus 48h + devis IA</h3>
+                <p>Le client décrit son déménagement en ligne (inventaire, adresses, formule). Un modérateur génère un devis détaillé via IA (distance, étages, volume, TVA, commission). Le devis est envoyé par WhatsApp. Le client confirme, signe un contrat électronique et paie à l’arrivée ou en ligne.</p>
+                <p> Suivi de statut en temps réel ·  Support WhatsApp dédié</p>
+            </div>
+        </div>
+        <div class="promise-box">
+            <p style="font-size:1.2rem; font-weight:700;"> Délai garanti 48h</p>
+            <p>De la demande de devis à la fin du déménagement : inspection sous 24h, déménagement dans les 24h suivantes. Si dépassement, le client est remboursé à 50%.</p>
+        </div>
+    </div>
+
+    <!-- Technologie & plateforme (simplifiée) -->
+    <div class="section">
+        <h2 class="section-title"> Technologie & plateforme</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Frontend PWA</h3>
+                <p>React 18, TypeScript, Tailwind, shadcn/ui. Mobile-first, installable sur smartphone. Formulaire de devis en 5 étapes, page de suivi timeline.</p>
+            </div>
+            <div class="card">
+                <h3>Backend Supabase</h3>
+                <p>PostgreSQL, RLS, Auth (MFA TOTP pour admins), Storage pour PDF. Edge Functions Deno : génération de devis IA, PDF signé, envoi WhatsApp.</p>
+            </div>
+            <div class="card">
+                <h3>IA & automatisation</h3>
+                <p>Calcul automatique du prix : forfait base + 5 DH/km au-delà de 10 km + 50 DH/étage sans ascenseur +40% pour clé en main. Devis justifié ligne à ligne.</p>
+            </div>
+        </div>
+        <div class="legal-clause">
+            🔒 <strong>Propriété intellectuelle</strong> – Algorithme de devis IA et processus de coordination 48h déposés en tant que logiciel (OMPIC en cours). Code source propriétaire.
+        </div>
+    </div>
+
+    <!-- Business model & tarifs (version prudente) -->
+    <div class="section" id="pricing">
+        <h2 class="section-title"> Business model</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Commission 25%</h3>
+                <p>Wassel'lia prélève 25% du prix TTC du déménagement. Le prestataire reçoit 75% après la prestation. Paiement à l’arrivée (espèces ou virement) avec contrat électronique signé avant le départ.</p>
+                <p><strong>Exemple :</strong> déménagement 2 pièces transport seul = 800 DH → commission 200 DH.</p>
+                <p><strong>Projections prudentes Y1 :</strong> 1 500 déménagements → CA HT = 450 kDH · Résultat net après part = 145 kDH · Trésorerie = 529 kDH.</p>
+            </div>
+            <div class="card">
+                <h3>Services additionnels (2027+)</h3>
+                <p>Nettoyage après déménagement, location de garde-meubles, assurance premium. Marge additionnelle prévue.</p>
+                <p><strong>Sleeping partner :</strong> 250 kDH injectés en Y1. 50% du résultat net jusqu’à 500 kDH remboursés (prévu en Y3).</p>
+            </div>
+        </div>
+        <div class="legal-clause">
+            📊 <strong>Projections (scénario prudent – 10 ans)</strong><br>
+            CA HT cumulé : 15 000 kDH · Résultat net après part cumulé : 4 900 kDH · Trésorerie fin Y10 : ~10 900 kDH<br>
+            Seuil de rentabilité atteint dès le premier mois. Autofinancement sans levée supplémentaire.
+        </div>
+    </div>
+
+    <!-- Avantage concurrentiel -->
+    <div class="section">
+        <h2 class="section-title"> Avantage concurrentiel</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>vs. Hany / Wadouz</h3>
+                <p>Ces marketplaces généralistes ne proposent pas de prix fixe, ni d’équipe coordonnée. Wassel'lia garantit un prix unique, visible avant réservation, et une équipe dédiée.</p>
+            </div>
+            <div class="card">
+                <h3>vs. entreprises traditionnelles (ZIRAX, J’y Vais)</h3>
+                <p>Elles n’ont pas d’application mobile, pas de devis instantané, pas de suivi en ligne. Wassel'lia digitalise entièrement l’expérience.</p>
+            </div>
+            <div class="card">
+                <h3>vs. informel</h3>
+                <p>Les indépendants n’offrent aucune garantie, ni assurance, ni traçabilité. Wassel'lia apporte transparence, contrat légal et protection contre la casse.</p>
+            </div>
+            <div class="card">
+                <h3>First-mover sur le segment prix fixe</h3>
+                <p>Aucun concurrent direct au Maroc ne combine : prix fixe + équipe coordonnée + devis IA + WhatsApp + délai 48h.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Marché cible (simplifié) -->
+    <div class="section">
+        <h2 class="section-title"> Marché cible</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>TAM (Maroc)</h3>
+                <p><strong>386 000 déménagements/an</strong><br>Valeur : 463 MDH</p>
+            </div>
+            <div class="card">
+                <h3>SAM (7 villes)</h3>
+                <p><strong>108 000 déménagements/an</strong><br>Valeur : 130 MDH</p>
+            </div>
+            <div class="card">
+                <h3>SOM (an 1 – prudent)</h3>
+                <p><strong>1 500 déménagements/an</strong><br>Valeur : 1,8 MDH TTC · Part de marché 1,4% du SAM</p>
+            </div>
+        </div>
+        <p style="margin-top:1rem;">Croissance annuelle visée : +30%, +25%, +20%, +20%, puis +15% jusqu’en Y10. Atteinte de 6 460 déménagements en Y10 (part de marché ~6% du SAM).</p>
+    </div>
+
+    <!-- Traction & roadmap -->
+    <div class="section">
+        <h2 class="section-title"> Traction & roadmap</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3> Réalisé (avril 2026)</h3>
+                <ul style="margin-left:1.2rem;">
+                    <li>MVP technique complet : frontend + backend + devis IA + WhatsApp + tracking</li>
+                    <li>Base de données opérationnelle, sécurité MFA, RLS, edge functions</li>
+                    <li>7 villes couvertes, processus 48h documenté</li>
+                    <li>PWA installable, design mobile-first, charte graphique finale</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3> Prochaines étapes (2026-2027)</h3>
+                <ul style="margin-left:1.2rem;">
+                    <li>Mai 2026 : premiers déménagements pilotes (10 clients réels)</li>
+                    <li>Juin 2026 : lancement commercial à Casablanca, objectif 150 clients en 2027</li>
+                    <li>Sept 2026 : déploiement Rabat & Tanger</li>
+                    <li>2027 : service nettoyage, ouverture à Marrakech et Agadir</li>
+                    <li>2027 : recherche d’un sleeping partner (250 kDH) pour accélérer</li>
+                </ul>
+            </div>
+        </div>
+        <div class="promise-box" style="margin-top:1rem;">
+            <strong>Scénario de levée :</strong> 250 kDH (sleeping partner, 50% des bénéfices jusqu’à 500 kDH remboursés) permet une trésorerie positive dès Y1 (529 kDH) et un remboursement en Y3.
+        </div>
+    </div>
+
+    <!-- Équipe -->
+    <div class="section">
+        <h2 class="section-title"> Équipe</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Zayd Bentalha</h3>
+                <p>Co‑fondateur – Stratégie, finance, levée de fonds, commercial. Lauréat SNEE, expérience en entrepreneuriat étudiant.</p>
+            </div>
+            <div class="card">
+                <h3>Selma Rouchdi</h3>
+                <p>Co‑fondatrice – Marketing digital, acquisition, relation prestataires, communication.</p>
+            </div>
+            <div class="card">
+                <h3>Douaa Ghilali</h3>
+                <p>Co‑fondatrice – Développement full‑stack, intégration IA, base de données, sécurité.</p>
+            </div>
+        </div>
+        <p>Les trois co‑fondateurs sont étudiants à l’UH2C et suivent le programme SNEE. Complémentarité métier/tech/marketing.</p>
+    </div>
+
+    <!-- Contact -->
+    <div id="contact" style="background: #5A3A1F; color: white; border-radius: 1.5rem; padding: 2rem; text-align: center; margin: 1rem 0 2rem;">
+        <p style="font-size: 1.4rem; font-weight: 600;">Prêt à déménager sans stress ?</p>
+        <p style="margin: 0.5rem 0 1.5rem;">Testez Wassel'lia dès aujourd’hui – devis gratuit, engagement zéro.</p>
+        <a href="https://wa.me/212679267545" class="btn" style="background: #D9A441; color:#5A3A1F;">📲 Réserver sur WhatsApp</a>
+        <p style="margin-top: 1.5rem; font-size: 0.75rem; opacity: 0.7;">wassel.lia@gmail.com · +212 679 267 545 · @wassellia (Insta/FB)</p>
+    </div>
+
+    <footer>
+        <p>© 2026 Wassel'lia – Document confidentiel – Version investisseur – Avril 2026 – Scénario prudent</p>
+        <p>Projet lauréat du SNEE (Université Hassan II Casablanca)</p>
+    </footer>
+</div>
+
+<!-- Back to Index Button -->
+<div style="text-align: center; margin-top: 2rem; padding: 1rem;">
+    <a href="../index.html" style="display: inline-block; background: #5A3A1F; color: white; text-decoration: none; font-family: 'Inter', sans-serif; font-weight: 500; padding: 0.6rem 1.5rem; border-radius: 2rem; font-size: 0.8rem; border: 1px solid #D9A441; transition: 0.2s;">← Retour à l’index des documents</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wassel'lia – Graphiques financiers (Y1-Y10) | Documentation investisseur</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: #fefaf7;
+            color: #1e1e2a;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            padding: 2rem 1.8rem;
+        }
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #5A3A1F;
+            border-left: 6px solid #D9A441;
+            padding-left: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .subhead {
+            color: #7a5a44;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #f0e5dd;
+            padding-bottom: 0.75rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .card {
+            background: #fefaf7;
+            border-radius: 1rem;
+            padding: 1.2rem;
+            border: 1px solid #f0e5dd;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #5A3A1F;
+            text-align: center;
+        }
+        canvas {
+            max-height: 280px;
+            width: 100%;
+        }
+        .note {
+            background: #fff6ef;
+            border-left: 4px solid #D9A441;
+            padding: 0.8rem;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            border-radius: 0.5rem;
+        }
+        .badge {
+            background: #f5ede7;
+            color: #84593D;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 1rem;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+        footer {
+            margin-top: 2rem;
+            font-size: 0.65rem;
+            text-align: center;
+            color: #8b7a6b;
+            border-top: 1px solid #f0e5dd;
+            padding-top: 1rem;
+        }
+        @media (max-width: 700px) {
+            .grid { grid-template-columns: 1fr; }
+            .container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Wassel'lia – Graphiques financiers (Y1-Y10)</h1>
+    <div class="subhead">Scénario prudent (1 500 déménagements Y1, croissance progressive) – P&L en HT, trésorerie TTC – Années 2027 (Y1) à 2036 (Y10)</div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>📊 Chiffre d'affaires HT (kDH)</h3>
+            <canvas id="revenueChart"></canvas>
+        </div>
+        <div class="card">
+            <h3>💰 Résultat net après part sleeping partner (HT, kDH)</h3>
+            <canvas id="netProfitChart"></canvas>
+        </div>
+        <div class="card">
+            <h3>🏦 Trésorerie (TTC, kDH)</h3>
+            <canvas id="cashChart"></canvas>
+        </div>
+        <div class="card">
+            <h3>📉 Marge nette (après part, % du CA HT)</h3>
+            <canvas id="marginChart"></canvas>
+        </div>
+        <div class="card">
+            <h3>🚚 Déménagements annuels</h3>
+            <canvas id="movesChart"></canvas>
+        </div>
+        <div class="card">
+            <h3>👥 Effectifs (salariés, hors fondateurs)</h3>
+            <canvas id="headcountChart"></canvas>
+        </div>
+        <div class="card">
+            <h3>📈 LTV / CAC (estimé, ×)</h3>
+            <canvas id="ltvCacChart"></canvas>
+        </div>
+        <div class="card">
+            <h3>🥧 Répartition des revenus – Y10 (HT)</h3>
+            <canvas id="pieChart" style="max-height: 240px;"></canvas>
+        </div>
+    </div>
+
+    <div class="note">
+        <span class="badge">📌 Source</span> Modèle financier Wassel'lia – Scénario prudent (avril 2026).<br>
+        • Commission unitaire : 300 DH HT (1 200 DH TTC)<br>
+        • Croissance des déménagements : +30%, +25%, +20%, +20%, +15%, +15%, +15%, +10%, +10%<br>
+        • Sleeping partner : injection 250 kDH en Y1, remboursement 500 kDH sur Y1-Y3 (50% du résultat net)<br>
+        • Trésorerie TTC après paiement de la TVA et délais clients (70% à 30j, 30% à 60j)
+    </div>
+
+    <footer>
+        🔹 Wassel'lia – Graphiques financiers · Avril 2026 · Confidentiel – Pour investisseurs et usage interne.<br>
+        Données cohérentes avec les états financiers (P&L) et le flux de trésorerie.
+    </footer>
+</div>
+
+<script>
+    // Années Y1 à Y10
+    const years = ['2027', '2028', '2029', '2030', '2031', '2032', '2033', '2034', '2035', '2036'];
+
+    // Données cohérentes avec le scénario prudent (cf. P&L et cash flow)
+    // CA HT (kDH) – commission + nettoyage + affiliés
+    const revenue = [450, 629, 804, 1005, 1239, 1459, 1701, 1976, 2199, 2426];
+    // Résultat net après part sleeping partner (kDH HT)
+    const netProfitAfterPartner = [145, 179, 199, 429, 530, 562, 633, 720, 741, 778];
+    // Trésorerie fin d'année (kDH TTC)
+    const cashBalance = [529, 928, 1389, 1992, 3021, 4210, 5590, 7207, 8974, 10898];
+    // Marge nette (%) = résultat net après part / CA HT
+    const netMargin = netProfitAfterPartner.map((v,i) => +(v / revenue[i] * 100).toFixed(1));
+    // Déménagements annuels
+    const movesCount = [1500, 1950, 2438, 2925, 3510, 4037, 4642, 5339, 5873, 6460];
+    // Effectifs (salariés hors fondateurs)
+    const headcount = [1, 3, 7, 10, 12, 16, 19, 22, 26, 29];
+    // LTV/CAC (estimé, évolutif)
+    const ltvCac = [3.2, 3.8, 4.2, 4.6, 5.1, 5.5, 5.8, 6.0, 6.2, 6.3];
+
+    // Graphique CA (ligne)
+    new Chart(document.getElementById('revenueChart'), {
+        type: 'line',
+        data: { labels: years, datasets: [{ label: 'kDH', data: revenue, borderColor: '#84593D', backgroundColor: 'rgba(132,89,61,0.05)', fill: true, tension: 0.2 }] },
+        options: { responsive: true, plugins: { tooltip: { callbacks: { label: (ctx) => `${ctx.raw} kDH` } } } }
+    });
+
+    // Résultat net après part (barres)
+    new Chart(document.getElementById('netProfitChart'), {
+        type: 'bar',
+        data: { labels: years, datasets: [{ label: 'kDH', data: netProfitAfterPartner, backgroundColor: '#D9A441' }] },
+        options: { responsive: true, plugins: { tooltip: { callbacks: { label: (ctx) => `${ctx.raw} kDH` } } } }
+    });
+
+    // Trésorerie (ligne)
+    new Chart(document.getElementById('cashChart'), {
+        type: 'line',
+        data: { labels: years, datasets: [{ label: 'kDH', data: cashBalance, borderColor: '#5A3A1F', backgroundColor: 'rgba(90,58,31,0.05)', fill: true, tension: 0.2 }] },
+        options: { responsive: true, plugins: { tooltip: { callbacks: { label: (ctx) => `${ctx.raw} kDH` } } } }
+    });
+
+    // Marge nette (ligne)
+    new Chart(document.getElementById('marginChart'), {
+        type: 'line',
+        data: { labels: years, datasets: [{ label: '%', data: netMargin, borderColor: '#D9A441', backgroundColor: 'rgba(217,164,65,0.05)', fill: true, tension: 0.2 }] },
+        options: { responsive: true, plugins: { tooltip: { callbacks: { label: (ctx) => `${ctx.raw}%` } } } }
+    });
+
+    // Déménagements (barres)
+    new Chart(document.getElementById('movesChart'), {
+        type: 'bar',
+        data: { labels: years, datasets: [{ label: 'Déménagements', data: movesCount, backgroundColor: '#84593D' }] },
+        options: { responsive: true, plugins: { tooltip: { callbacks: { label: (ctx) => `${ctx.raw} déménagements` } } } }
+    });
+
+    // Effectifs (ligne)
+    new Chart(document.getElementById('headcountChart'), {
+        type: 'line',
+        data: { labels: years, datasets: [{ label: 'Salariés', data: headcount, borderColor: '#84593D', backgroundColor: 'rgba(132,89,61,0.05)', fill: true, tension: 0.2 }] },
+        options: { responsive: true, plugins: { tooltip: { callbacks: { label: (ctx) => `${ctx.raw} personnes` } } } }
+    });
+
+    // LTV/CAC (barres)
+    new Chart(document.getElementById('ltvCacChart'), {
+        type: 'bar',
+        data: { labels: years, datasets: [{ label: 'Ratio (x)', data: ltvCac, backgroundColor: '#D9A441' }] },
+        options: { responsive: true, plugins: { tooltip: { callbacks: { label: (ctx) => `${ctx.raw}x` } } } }
+    });
+
+    // Répartition des revenus en Y10 (HT): commission (1 938), nettoyage (339), affiliés (149)
+    new Chart(document.getElementById('pieChart'), {
+        type: 'pie',
+        data: {
+            labels: ['Commission (1 938 kDH)', 'Nettoyage (339 kDH)', 'Affiliés (149 kDH)'],
+            datasets: [{ data: [1938, 339, 149], backgroundColor: ['#84593D', '#D9A441', '#5A3A1F'] }]
+        },
+        options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+    });
+</script>
+
+<!-- Back to Index Button -->
+<div style="text-align: center; margin-top: 2rem; padding: 1rem;">
+    <a href="../index.html" style="display: inline-block; background: #5A3A1F; color: white; text-decoration: none; font-family: 'Inter', sans-serif; font-weight: 500; padding: 0.6rem 1.5rem; border-radius: 2rem; font-size: 0.8rem; border: 1px solid #D9A441; transition: 0.2s;">← Retour à l’index des documents</a>
+</div>
+</body>
+</html>

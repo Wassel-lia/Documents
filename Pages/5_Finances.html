@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wassel'lia – États financiers (Y1-Y10) | Documentation investisseur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, monospace;
+            background: #fefaf7;
+            color: #1e1e2a;
+            padding: 2rem 1rem;
+            line-height: 1.4;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            padding: 2rem 1.8rem;
+        }
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #5A3A1F;
+            border-left: 6px solid #D9A441;
+            padding-left: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        .subhead {
+            color: #7a5a44;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #f0e5dd;
+            padding-bottom: 0.75rem;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 1.5rem 0 1rem 0;
+            color: #5A3A1F;
+            background: #f5ede7;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.5rem;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .card-metric {
+            background: #f5ede7;
+            border-radius: 0.75rem;
+            padding: 0.8rem;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #84593D;
+        }
+        .table-responsive {
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.7rem;
+            font-family: 'Courier New', monospace;
+        }
+        th, td {
+            border: 1px solid #f0e5dd;
+            padding: 0.5rem 0.3rem;
+            text-align: right;
+            vertical-align: top;
+        }
+        th {
+            background: #f5ede7;
+            font-weight: 700;
+            text-align: center;
+            color: #5A3A1F;
+        }
+        .left {
+            text-align: left;
+            font-weight: 600;
+            background: #fefaf7;
+        }
+        .highlight {
+            background: #fff6ef;
+            font-weight: 600;
+        }
+        .note {
+            background: #fff6ef;
+            border-left: 4px solid #D9A441;
+            padding: 0.8rem;
+            margin: 1rem 0;
+            font-size: 0.7rem;
+            border-radius: 0.5rem;
+        }
+        footer {
+            margin-top: 2rem;
+            font-size: 0.65rem;
+            text-align: center;
+            color: #8b7a6b;
+            border-top: 1px solid #f0e5dd;
+            padding-top: 1rem;
+        }
+        @media (max-width: 800px) {
+            .container { padding: 1rem; }
+            table { font-size: 0.55rem; }
+            th, td { padding: 0.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Wassel'lia – États financiers prévisionnels (Y1-Y10)</h1>
+    <div class="subhead">Tous les montants en kDH (sauf mention) – Scénario prudent – Années 2027 (Y1) à 2036 (Y10) – P&L en HT, Cash flow en TTC (cf. document 6)</div>
+
+    <!-- ========== 1. HYPOTHÈSES CLÉS RÉALISTES ========== -->
+    <div class="section-title"> 1. HYPOTHÈSES CLÉS (scénario prudent)</div>
+    <div class="grid-2">
+        <div class="card-metric"><div class="metric-value">Déménagements Y1</div>1 500 (125/mois) – réaliste</div>
+        <div class="card-metric"><div class="metric-value">Croissance annuelle</div>+30% Y2, +25% Y3, +20% Y4‑5, +15% Y6‑8, +10% Y9‑10</div>
+        <div class="card-metric"><div class="metric-value">Prix moyen TTC</div>1 200 DH → commission Wssel = 300 DH</div>
+        <div class="card-metric"><div class="metric-value">Nettoyage (à partir Y2)</div>Marge 150 DH, pénétration 15% → 35%</div>
+        <div class="card-metric"><div class="metric-value">Affiliés (à partir Y4)</div>15 DH/déménagement, pénétration 5% → 20%</div>
+        <div class="card-metric"><div class="metric-value">Modèle</div>Asset‑light : aucun coût variable (commission seule)</div>
+        <div class="card-metric"><div class="metric-value">Charges fixes Y1</div>70 kDH (hors salaires)</div>
+        <div class="card-metric"><div class="metric-value">Sleeping partner (pre‑seed)</div>250 kDH injectés Y1, 50% du résultat net avant impôt jusqu’à 500 kDH remboursés</div>
+        <div class="card-metric"><div class="metric-value">IS (Impôt société)</div>20% sur résultat avant impôt</div>
+        <div class="card-metric"><div class="metric-value">Fondateurs</div>Indemnités : Y1 12 kDH, Y2 24 kDH, +10%/an (inclus dans salaires)</div>
+        <div class="card-metric"><div class="metric-value">TVA</div>20% – P&L en HT, Cash flow en TTC (voir doc 6)</div>
+        <div class="card-metric"><div class="metric-value">Délais de paiement clients</div>70% à 30 jours, 30% à 60 jours (intégré au cash flow)</div>
+    </div>
+
+    <!-- ========== 2. VOLUME DE DÉMÉNAGEMENTS (annuels) ========== -->
+    <div class="section-title"> 2. VOLUME DE DÉMÉNAGEMENTS (prudent)</div>
+    <div class="table-responsive">
+        <table>
+            <thead><tr><th>Année</th><th>Y1</th><th>Y2</th><th>Y3</th><th>Y4</th><th>Y5</th><th>Y6</th><th>Y7</th><th>Y8</th><th>Y9</th><th>Y10</th></tr></thead>
+            <tbody><tr><td class="left">Déménagements</td><td>1 500</td><td>1 950</td><td>2 438</td><td>2 925</td><td>3 510</td><td>4 037</td><td>4 642</td><td>5 339</td><td>5 873</td><td>6 460</td></tr></tbody>
+        </table>
+    </div>
+
+    <!-- ========== 3. STRUCTURE DE REVENUS – CA TTC (kDH) ========== -->
+    <div class="section-title"> 3. STRUCTURE DE REVENUS – CA HT (kDH)</div>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr><th>Poste (HT)</th><th>Y1</th><th>Y2</th><th>Y3</th><th>Y4</th><th>Y5</th><th>Y6</th><th>Y7</th><th>Y8</th><th>Y9</th><th>Y10</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="left">Commission (300 DH/un.)</td><td>450</td><td>585</td><td>731</td><td>878</td><td>1 053</td><td>1 211</td><td>1 393</td><td>1 602</td><td>1 762</td><td>1 938</td></tr>
+                <tr><td class="left">Nettoyage (marge 150 DH)</td><td>0</td><td>44</td><td>73</td><td>105</td><td>142</td><td>184</td><td>224</td><td>267</td><td>308</td><td>339</td></tr>
+                <tr><td class="left">Affiliés (15 DH/un.)</td><td>0</td><td>0</td><td>0</td><td>22</td><td>44</td><td>64</td><td>84</td><td>107</td><td>129</td><td>149</td></tr>
+                <tr class="highlight"><td class="left"><strong>Chiffre d'affaires total HT</strong></td><td><strong>450</strong></td><td><strong>629</strong></td><td><strong>804</strong></td><td><strong>1 005</strong></td><td><strong>1 239</strong></td><td><strong>1 459</strong></td><td><strong>1 701</strong></td><td><strong>1 976</strong></td><td><strong>2 199</strong></td><td><strong>2 426</strong></td></tr>
+            </tbody>
+        </table>
+        <div class="note">La commission est la marge brute (pas de coût variable). TVA 20% s'ajoute pour le client.</div>
+    </div>
+
+    <!-- ========== 4. EFFECTIFS (salariés CDI, hors fondateurs) ========== -->
+    <div class="section-title"> 4. EFFECTIFS (salariés, hors fondateurs)</div>
+    <div class="table-responsive">
+        <table>
+            <thead><tr><th>Rôle</th><th>Y1</th><th>Y2</th><th>Y3</th><th>Y4</th><th>Y5</th><th>Y6</th><th>Y7</th><th>Y8</th><th>Y9</th><th>Y10</th></tr></thead>
+            <tbody>
+                <tr><td class="left">Support client & modérateurs</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+                <tr><td class="left">Marketing & ventes</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
+                <tr><td class="left">Gestion prestataires / opérations</td><td>0</td><td>0</td><td>1</td><td>2</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+                <tr><td class="left">Administratif & finance</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>2</td><td>2</td><td>2</td><td>3</td><td>3</td></tr>
+                <tr class="highlight"><td class="left"><strong>Total salariés</strong></td><td><strong>1</strong></td><td><strong>3</strong></td><td><strong>7</strong></td><td><strong>10</strong></td><td><strong>12</strong></td><td><strong>16</strong></td><td><strong>19</strong></td><td><strong>22</strong></td><td><strong>26</strong></td><td><strong>29</strong></td></tr>
+            </tbody>
+        </table>
+        <div class="note">Salaires chargés moyens : 30 kDH/an par employé (incluant charges sociales). Indemnités fondateurs : Y1 12 kDH, Y2 24 kDH, puis +10%/an.</div>
+    </div>
+
+    <!-- ========== 5. CHARGES OPÉRATIONNELLES (OPEX) HT ========== -->
+    <div class="section-title"> 5. CHARGES OPÉRATIONNELLES – kDH (annuel, HT)</div>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr><th>Poste</th><th>Y1</th><th>Y2</th><th>Y3</th><th>Y4</th><th>Y5</th><th>Y6</th><th>Y7</th><th>Y8</th><th>Y9</th><th>Y10</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="left">Salaires & charges (employés)</td><td>30</td><td>90</td><td>210</td><td>300</td><td>360</td><td>480</td><td>570</td><td>660</td><td>780</td><td>870</td></tr>
+                <tr><td class="left">Indemnités fondateurs</td><td>12</td><td>24</td><td>26</td><td>29</td><td>32</td><td>35</td><td>39</td><td>43</td><td>47</td><td>52</td></tr>
+                <tr><td class="left">Marketing & acquisition</td><td>15</td><td>25</td><td>40</td><td>60</td><td>85</td><td>120</td><td>160</td><td>210</td><td>260</td><td>320</td></tr>
+                <tr><td class="left">Hébergement & SaaS</td><td>6</td><td>9</td><td>12</td><td>15</td><td>18</td><td>22</td><td>25</td><td>30</td><td>35</td><td>40</td></tr>
+                <tr><td class="left">Assurances (RC Pro, cyber)</td><td>8</td><td>12</td><td>18</td><td>25</td><td>32</td><td>40</td><td>48</td><td>55</td><td>63</td><td>72</td></tr>
+                <tr><td class="left">Frais généraux (internet, tel, déplacements)</td><td>6</td><td>10</td><td>14</td><td>18</td><td>22</td><td>26</td><td>30</td><td>34</td><td>38</td><td>42</td></tr>
+                <tr><td class="left">Frais légaux & comptabilité</td><td>5</td><td>7</td><td>10</td><td>14</td><td>18</td><td>22</td><td>26</td><td>30</td><td>35</td><td>40</td></tr>
+                <tr><td class="left">OMPIC & brevets</td><td>2</td><td>2</td><td>2</td><td>3</td><td>3</td><td>4</td><td>4</td><td>5</td><td>5</td><td>6</td></tr>
+                <tr><td class="left">Amortissements (matériel bureautique)</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+                <tr class="highlight"><td class="left"><strong>Total OPEX (HT)</strong></td><td><strong>86</strong></td><td><strong>182</strong></td><td><strong>336</strong></td><td><strong>469</strong></td><td><strong>576</strong></td><td><strong>756</strong></td><td><strong>910</strong></td><td><strong>1 076</strong></td><td><strong>1 273</strong></td><td><strong>1 453</strong></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ========== 6. COMPTE DE RÉSULTAT (P&L) HT ========== -->
+    <div class="section-title"> 6. COMPTE DE RÉSULTAT – kDH (Y1 à Y10, HT)</div>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr><th>Poste</th><th>Y1</th><th>Y2</th><th>Y3</th><th>Y4</th><th>Y5</th><th>Y6</th><th>Y7</th><th>Y8</th><th>Y9</th><th>Y10</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="left">Chiffre d'affaires HT</td><td>450</td><td>629</td><td>804</td><td>1 005</td><td>1 239</td><td>1 459</td><td>1 701</td><td>1 976</td><td>2 199</td><td>2 426</td></tr>
+                <tr><td class="left">Coûts variables (reversement prestataires)</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr class="highlight"><td class="left"><strong>Marge brute</strong></td><td><strong>450</strong></td><td><strong>629</strong></td><td><strong>804</strong></td><td><strong>1 005</strong></td><td><strong>1 239</strong></td><td><strong>1 459</strong></td><td><strong>1 701</strong></td><td><strong>1 976</strong></td><td><strong>2 199</strong></td><td><strong>2 426</strong></td></tr>
+                <tr><td class="left">OPEX (charges fixes)</td><td>(86)</td><td>(182)</td><td>(336)</td><td>(469)</td><td>(576)</td><td>(756)</td><td>(910)</td><td>(1 076)</td><td>(1 273)</td><td>(1 453)</td></tr>
+                <tr><td class="left">Amortissements (déjà inclus dans OPEX)</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td class="left"><strong>Résultat avant impôt (EBT)</strong></td><td><strong>364</strong></td><td><strong>447</strong></td><td><strong>468</strong></td><td><strong>536</strong></td><td><strong>663</strong></td><td><strong>703</strong></td><td><strong>791</strong></td><td><strong>900</strong></td><td><strong>926</strong></td><td><strong>973</strong></td></tr>
+                <tr><td class="left">Impôt société (20%)</td><td>(73)</td><td>(89)</td><td>(94)</td><td>(107)</td><td>(133)</td><td>(141)</td><td>(158)</td><td>(180)</td><td>(185)</td><td>(195)</td></tr>
+                <tr><td class="left"><strong>Résultat net (avant part sleeping partner)</strong></td><td><strong>291</strong></td><td><strong>358</strong></td><td><strong>374</strong></td><td><strong>429</strong></td><td><strong>530</strong></td><td><strong>562</strong></td><td><strong>633</strong></td><td><strong>720</strong></td><td><strong>741</strong></td><td><strong>778</strong></td></tr>
+                <tr><td class="left">Part sleeping partner (50% du résultat net, jusqu'à 500 kDH cumulés)</td><td>(146)</td><td>(179)</td><td>(175)</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr class="highlight"><td class="left"><strong>Résultat net (après part sleeping partner)</strong></td><td><strong>145</strong></td><td><strong>179</strong></td><td><strong>199</strong></td><td><strong>429</strong></td><td><strong>530</strong></td><td><strong>562</strong></td><td><strong>633</strong></td><td><strong>720</strong></td><td><strong>741</strong></td><td><strong>778</strong></td></tr>
+                <tr><td class="left">Marge nette (après part) / CA HT</td><td>32,2%</td><td>28,5%</td><td>24,8%</td><td>42,7%</td><td>42,8%</td><td>38,5%</td><td>37,2%</td><td>36,4%</td><td>33,7%</td><td>32,1%</td></tr>
+            </tbody>
+        </table>
+        <div class="note">Le sleeping partner reçoit 50% du résultat net avant impôt jusqu'à remboursement total de 500 kDH (cumul des parts). Ici remboursé en Y3. Après Y3, plus de part.</div>
+    </div>
+
+    <!-- ========== 7. NOTE SUR LA TVA ET LE CASH FLOW ========== -->
+    <div class="section-title"> 7. Note sur la TVA et le flux de trésorerie</div>
+    <div class="note">
+        Le P&L ci-dessus est présenté <strong>hors TVA (HT)</strong>. La TVA marocaine est de 20%. Elle s'applique sur le chiffre d'affaires (facturé aux clients) et sur une partie des charges (déductible).  
+        Le <strong>flux de trésorerie réel (TTC)</strong> est présenté dans le document séparé <code>6_Cash_Flow_Balance_Sheets.html</code>.  
+        Les délais de paiement clients (70% à 30 jours, 30% à 60 jours) et le reversement de la TVA à l'administration sont intégrés dans le cash flow.
+    </div>
+
+    <!-- ========== 8. SYNTHÈSE POUR L'INVESTISSEUR ========== -->
+    <div class="section-title"> 8. SYNTHÈSE POUR L'INVESTISSEUR</div>
+    <div class="card-metric" style="text-align: left; margin-bottom: 1rem;">
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+            <li>✓ Modèle économique asset‑light : CA = commission, pas de coût variable.</li>
+            <li>✓ <strong>Scénario prudent</strong> : 1 500 déménagements la première année, croissance progressive.</li>
+            <li>✓ Rentabilité immédiate : résultat net après part > 145 kDH dès Y1 (marge nette >30%).</li>
+            <li>✓ <strong>Sleeping partner</strong> : 250 kDH injectés, remboursement de 500 kDH en 3 ans – retour sur investissement attractif (100% en 3 ans).</li>
+            <li>✓ Trésorerie positive dès Y1 (voir document 6).</li>
+            <li>✓ Plan d'effectifs réaliste : 1 salarié Y1 → 29 en Y10.</li>
+            <li>✓ Aucun besoin de financement supplémentaire après l'apport initial.</li>
+        </ul>
+    </div>
+
+    <footer>
+        🔹 Wassel'lia – États financiers prévisionnels (Y1-Y10) · Avril 2026 · Confidentiel – Pour investisseurs et usage interne.<br>
+        Ce document est accompagné d'un flux de trésorerie détaillé (TTC) et d'une analyse de sensibilité. Data room disponible sur demande.
+    </footer>
+</div>
+
+<!-- Back to Index Button -->
+<div style="text-align: center; margin-top: 2rem; padding: 1rem;">
+    <a href="../index.html" style="display: inline-block; background: #5A3A1F; color: white; text-decoration: none; font-family: 'Inter', sans-serif; font-weight: 500; padding: 0.6rem 1.5rem; border-radius: 2rem; font-size: 0.8rem; border: 1px solid #D9A441; transition: 0.2s;">← Retour à l’index des documents</a>
+</div>
+</body>
+</html>

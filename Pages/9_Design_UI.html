@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Wassel'lia – Design & expérience utilisateur | Documentation investisseur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: #fefaf7;
+            color: #1e1e2a;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1.75rem;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+            padding: 2rem 2rem 2rem 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #5A3A1F, #84593D);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.25rem;
+        }
+
+        .subhead {
+            color: #7a5a44;
+            border-left: 4px solid #D9A441;
+            padding-left: 1rem;
+            margin: 0.5rem 0 1.5rem 0;
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem 0;
+            color: #5A3A1F;
+            border-bottom: 2px solid #f0e5dd;
+            padding-bottom: 0.4rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .card {
+            background: #fefaf7;
+            border-radius: 1rem;
+            padding: 1.2rem;
+            border: 1px solid #f0e5dd;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #84593D;
+            border-left: 3px solid #D9A441;
+            padding-left: 0.6rem;
+        }
+
+        .badge {
+            background: #f5ede7;
+            color: #84593D;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 1rem;
+            display: inline-block;
+            margin-right: 0.4rem;
+            margin-bottom: 0.3rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            margin: 0.8rem 0;
+        }
+        th, td {
+            border: 1px solid #f0e5dd;
+            padding: 0.5rem;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background: #f5ede7;
+            font-weight: 600;
+            color: #5A3A1F;
+        }
+        code {
+            background: #f5ede7;
+            padding: 0.1rem 0.3rem;
+            border-radius: 0.3rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            color: #84593D;
+        }
+        .diagram {
+            background: #fefaf7;
+            border: 1px dashed #D9A441;
+            border-radius: 0.8rem;
+            padding: 1rem;
+            font-family: monospace;
+            font-size: 0.7rem;
+            white-space: pre;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        .color-swatch {
+            display: inline-block;
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 0.2rem;
+            vertical-align: middle;
+            margin-right: 0.3rem;
+        }
+        .footer-note {
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            text-align: center;
+            color: #8b7a6b;
+            border-top: 1px solid #f0e5dd;
+            padding-top: 1.5rem;
+        }
+        @media (max-width: 800px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .container { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Wassel'lia – Design & expérience utilisateur</h1>
+    <div class="subhead">Charte graphique, typographie, composants, mobile‑first, architecture d’interface – Confidentiel</div>
+
+    <!-- Identité visuelle -->
+    <div class="section-title"> Identité visuelle & palette</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3>Palette de couleurs</h3>
+            <p><span class="color-swatch" style="background:#84593D;"></span> <strong>Primaire</strong> #84593D (brun) – boutons, liens, bordures d’accent<br>
+            <span class="color-swatch" style="background:#F8F1E7;"></span> <strong>Fond</strong> #F8F1E7 (crème) – arrière‑plan général<br>
+            <span class="color-swatch" style="background:#D9A441;"></span> <strong>Accent 1</strong> #D9A441 (or) – survols, badges, détails<br>
+            <span class="color-swatch" style="background:#D17A52;"></span> <strong>Accent 2</strong> #D17A52 (terracotta) – messages d’alerte, secondaire<br>
+            <span class="color-swatch" style="background:#5A3A1F;"></span> <strong>Brun profond</strong> #5A3A1F – titres, pied de page<br>
+            <span class="color-swatch" style="background:#1e1e2a;"></span> <strong>Texte principal</strong> #1e1e2a (gris‑bleu foncé) – lisibilité maximale</p>
+        </div>
+        <div class="card">
+            <h3>Typographie</h3>
+            <p><span class="badge">Police</span> Inter (Google Fonts)<br>
+            <span class="badge">Titres</span> ExtraBold (800), taille responsive 1.8rem → 3rem<br>
+            <span class="badge">Corps</span> Regular (400), taille 0.9rem → 1rem<br>
+            <span class="badge">CTA & navigation</span> Medium (500)<br>
+            <span class="badge">Éléments techniques</span> Mono (Courier New) pour code, devis, justificatifs</p>
+        </div>
+        <div class="card">
+            <h3>Logo & iconographie</h3>
+            <p>Logo monochrome brun (icône camion + texte « Wassel'lia »). Favicon assorti. Icônes vectorielles (FontAwesome / Lucide) utilisées pour toutes les actions – aucun émoji. La barre de navigation affiche uniquement l’icône (pas de texte long) sur mobile.</p>
+        </div>
+        <div class="card">
+            <h3>Tonalité & style</h3>
+            <p>Chaleureux, professionnel, marocain moderne. Pas de fausse minimaliste : cartes avec ombres douces, coins arrondis 2xl, motifs de fond subtils (points, vagues à faible opacité). Transitions fluides (0.2s).</p>
+        </div>
+    </div>
+
+    <!-- Composants UI -->
+    <div class="section-title"> Composants d’interface (shadcn/ui personnalisé)</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3>Boutons</h3>
+            <p><span class="badge">Primary</span> fond #84593D, texte blanc, padding 0.75rem 1.5rem, border-radius 2rem.<br>
+            <span class="badge">Secondary</span> fond transparent, bordure #84593D, texte #84593D.<br>
+            <span class="badge">Ghost</span> sans fond ni bordure, apparaît au survol.<br>
+            <span class="badge">Désactivé</span> opacité 0.5, curseur non autorisé.</p>
+        </div>
+        <div class="card">
+            <h3>Formulaires & inputs</h3>
+            <p>Champs avec bordure #f0e5dd, coins 0.75rem, padding 0.75rem, focus avec anneau #D9A441. Labels en Inter Medium, messages d’erreur en rouge (#b13e3e) en petit corps. Validation Zod en temps réel.</p>
+        </div>
+        <div class="card">
+            <h3>Cartes (cards)</h3>
+            <p>Fond blanc, bordure 1px #f0e5dd, box‑shadow 0 12px 25px rgba(0,0,0,0.04), coins 1.5rem, padding 1.5rem. Au survol, ombre plus marquée et translation Y (-2px).</p>
+        </div>
+        <div class="card">
+            <h3>Modales & overlays</h3>
+            <p>Centrées, fond overlay flou (backdrop‑filter), fermeture par clic externe. Coins 1.5rem, padding 1.5rem. Utilisées pour la signature électronique, la confirmation d’annulation, et l’aperçu du devis.</p>
+        </div>
+        <div class="card">
+            <h3>Timeline de suivi (statuts)</h3>
+            <p>Composant vertical affichant les 5 étapes : Demande → Devis accepté → Inspection → Déménagement en cours → Terminé. Étape active : icône pleine #84593D, étape future : grise. Connecteur gris.</p>
+        </div>
+        <div class="card">
+            <h3>Notifications & toasts</h3>
+            <p>Messages temporaires en bas à droite, fond #5A3A1F, texte blanc, icône de succès/erreur. Disparaissent automatiquement après 4 secondes.</p>
+        </div>
+    </div>
+
+    <!-- Architecture d’écrans (pages publiques) -->
+    <div class="section-title"> Architecture d’écrans – Mobile‑first</div>
+    <div class="diagram">
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  Page d'accueil (Home)                                                     │
+│  - Hero : badge SNEE, titre, tagline, 2 CTA (Demander un devis / Tarifs)  │
+│  - Process en 3 étapes (Devis → Signature → Déménagement 48h)             │
+│  - Liste des 7 villes avec icônes                                          │
+│  - Témoignages (mock, bientôt réels)                                       │
+│  - Footer avec socials, contact, mentions légales                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  Formulaire de devis (5 étapes)                                            │
+│  - Étape 1 : Type de logement (studio/2p/3+/maison)                        │
+│  - Étape 2 : Formule (transport seul / clé en main)                       │
+│  - Étape 3 : Inventaire des biens (catégories + dimensions/poids optionnels)│
+│  - Étape 4 : Adresses (départ/arrivée, autocomplétion phase 2)            │
+│  - Étape 5 : Date souhaitée + coordonnées (nom, téléphone, email)         │
+│  - Bouton « Demander un devis » → soumission + redirection vers page confirmation│
+├─────────────────────────────────────────────────────────────────────────────┤
+│  Page de suivi (Tracking)                                                  │
+│  - Input numéro de demande + code sécurité                                 │
+│  - Affichage timeline 5 étapes avec statut actuel et horodatage            │
+│  - Lien vers le contrat signé (PDF) et le devis                            │
+│  - Bouton « Contacter le support WhatsApp »                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  Page « Devenir prestataire »                                              │
+│  - Avantages (flexibilité, revenus, formation)                             │
+│  - Formulaire de candidature (CIN, casier, RC Pro, permis, carte grise)   │
+│  - Upload de documents (stockés dans bucket privé)                         │
+│  - Message de confirmation après soumission                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  Dashboard admin / modérateur                                              │
+│  - Login sécurisé (mot de passe + MFA TOTP)                                │
+│  - 3 onglets : Demandes & devis, Candidatures prestataires, KPIs           │
+│  - Liste des demandes avec filtres (statut, date)                          │
+│  - Bouton « Générer le devis » → ouvre modale avec aperçu IA               │
+│  - Bouton « Envoyer par WhatsApp » (lien `wa.me/`)                         │
+└─────────────────────────────────────────────────────────────────────────────┘
+    </div>
+
+    <!-- Responsive & accessibilité -->
+    <div class="section-title"> Responsive & accessibilité</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3>Mobile‑first (breakpoints)</h3>
+            <p>Base : ≤375px (iPhone SE).<br>
+            <span class="badge">sm</span> 640px · <span class="badge">md</span> 768px · <span class="badge">lg</span> 1024px · <span class="badge">xl</span> 1280px.<br>
+            Navigation : menu burger sur mobile, barre horizontale sur desktop.<br>
+            Formulaires : champs pleine largeur sur mobile, deux colonnes sur desktop.</p>
+        </div>
+        <div class="card">
+            <h3>Accessibilité (WCAG 2.1 AA)</h3>
+            <p>• Contraste des couleurs vérifié (ratio > 4.5:1).<br>
+            • Attributs `aria-label` sur toutes les icônes.<br>
+            • Navigation clavier (Tab, Enter, Escape).<br>
+            • Tailles de police relatives (rem).<br>
+            • Messages d’erreur clairs pour les formulaires.</p>
+        </div>
+        <div class="card">
+            <h3>Performances PWA</h3>
+            <p>• Service worker avec mise en cache des assets statiques (stratégie stale‑while‑revalidate).<br>
+            • Manifest.json pour installation sur smartphone.<br>
+            • Lazy loading des images et des composants lourds.<br>
+            • Score Lighthouse visé > 90 sur performance, accessibilité, SEO.</p>
+        </div>
+        <div class="card">
+            <h3>Gestion des erreurs & états vides</h3>
+            <p>• Pages 404, 500 personnalisées.<br>
+            • États de chargement (squelettes / spinners).<br>
+            • Messages explicites quand aucune demande trouvée, pas de prestataire disponible, etc.</p>
+        </div>
+    </div>
+
+    <!-- Flux utilisateur typique -->
+    <div class="section-title"> Flux utilisateur – Client particulier</div>
+    <div class="diagram">
+1. Client arrive sur la page d’accueil → lit la proposition de valeur → clique « Demander un devis ».
+2. Remplit le formulaire en 5 étapes (type, formule, inventaire, adresses, coordonnées).
+3. Soumet → voit une page de confirmation « Votre demande a été transmise, vous recevrez un devis par WhatsApp sous 24h. »
+4. Le modérateur génère le devis IA → envoie le lien WhatsApp.
+5. Client reçoit le message → clique sur le lien → visualise le devis (PDF) → répond CONFIRMER.
+6. Client reçoit un lien de paiement / signature → signe le contrat électronique → finalise.
+7. Client reçoit un rappel la veille du déménagement.
+8. Le jour J, le prestataire arrive → client peut suivre le statut dans la page de suivi.
+9. Après le déménagement, client reçoit un lien d’évaluation (note sur 5 + commentaire).
+    </div>
+
+    <!-- Améliorations futures (design) -->
+    <div class="section-title"> Évolutions UI/UX prévues (2026‑2027)</div>
+    <div class="grid-2">
+        <div class="card">
+            <h3>Suivi GPS en temps réel</h3>
+            <p>Intégration de Leaflet / Mapbox pour afficher la position du prestataire sur une carte pendant le déménagement.</p>
+        </div>
+        <div class="card">
+            <h3>Chat intégré (WhatsApp embarqué)</h3>
+            <p>Widget de messagerie directe depuis l’application (sans quitter le navigateur) via WhatsApp Business API.</p>
+        </div>
+        <div class="card">
+            <h3>Personnalisation du devis par IA conversationnelle</h3>
+            <p>Assistant IA (chatbot) qui guide le client dans la description de son inventaire, posant des questions sur les objets fragiles, l’accès, etc.</p>
+        </div>
+        <div class="card">
+            <h3>Mode sombre (dark mode)</h3>
+            <p>Basé sur les préférences système, avec adaptation de la palette (brun sur fond foncé).</p>
+        </div>
+    </div>
+
+    <!-- Synthèse pour investisseurs -->
+    <div class="section-title"> Synthèse – Pourquoi l’UI/UX de Wassel'lia est un atout</div>
+    <div class="card" style="background: #f5ede7;">
+        <ul style="margin-left: 1.5rem;">
+            <li>✅ Interface épurée mais chaleureuse, inspirée de Tiptapp et Lalamove – confiance immédiate.</li>
+            <li>✅ Mobile‑first : plus de 80% des utilisateurs réservent sur smartphone – l’expérience est fluide.</li>
+            <li>✅ Accessibilité et conformité WCAG – inclusif pour les seniors et malvoyants.</li>
+            <li>✅ Processus guidé en 5 étapes : taux d’abandon réduit, clarté sur la progression.</li>
+            <li>✅ Timeline de suivi transparente : réduit le besoin de support client (moins d’appels).</li>
+            <li>✅ Dashboard admin modulaire – permet une gestion efficace même avec un petit modérateur.</li>
+        </ul>
+    </div>
+
+    <div class="footer-note">
+        🔹 Wassel'lia – Design & expérience utilisateur · Avril 2026 · Confidentiel – Pour investisseurs et partenaires.<br>
+        Les maquettes Figma et le design system complet sont disponibles sous NDA pour due diligence.
+    </div>
+</div>
+
+<!-- Back to Index Button -->
+<div style="text-align: center; margin-top: 2rem; padding: 1rem;">
+    <a href="../index.html" style="display: inline-block; background: #5A3A1F; color: white; text-decoration: none; font-family: 'Inter', sans-serif; font-weight: 500; padding: 0.6rem 1.5rem; border-radius: 2rem; font-size: 0.8rem; border: 1px solid #D9A441; transition: 0.2s;">← Retour à l’index des documents</a>
+</div>
+</body>
+</html>
